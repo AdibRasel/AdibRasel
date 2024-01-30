@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+.CommonHover{
+    transition: 500ms;
+}
+.CommonHover:hover{
+    color: #0dcaf0;
+
+}
+
+
+
+.TopBarNavLink{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 15px;
+    transition: 500ms;
+    color: white;
+}
+.TopBarNavLink:hover{
+    color: #0dcaf0;
+
+}
+.active{
+    color: #0dcaf0;
+    font-weight: 600;
+}
