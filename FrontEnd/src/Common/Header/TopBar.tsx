@@ -24,7 +24,9 @@ const TopBar = () => {
 
   return (<>
 
-    <div className="bg-dark p-1" style={{ borderTop: "4px solid #0dcaf0" }}>
+    <div className="CommonBG p-1"></div>
+
+    <div className="TopBarBG p-1">
 
 
       <Container>
@@ -34,7 +36,6 @@ const TopBar = () => {
 
 
             <div className="text-white justify-content-center">
-
 
               <span className='text-light me-4'>{formattedDate}</span>
 
@@ -48,9 +49,6 @@ const TopBar = () => {
               <a style={{ textDecoration: "none", color: "white", paddingRight: "5px" }} href="tel:+8801626757897" target="_blank" rel="noopener noreferrer"><span className='CommonHover'> <FaPhoneSquare /> </span></a>
 
             </div>
-
-
-
 
           </Col>
 

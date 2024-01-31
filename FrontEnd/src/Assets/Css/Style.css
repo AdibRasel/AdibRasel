@@ -1,22 +1,30 @@
-body{
+body {
     margin: 0;
     padding: 0;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
-.CommonHover{
+.CommonBG {
+    background-color: #81689D;
+}
+
+.CommonHover {
     transition: 500ms;
 }
-.CommonHover:hover{
-    color: #0dcaf0;
 
+.CommonHover:hover {
+    color: #81689D;
 }
 
 
+.TopBarBG {
+    background-color: #474F7A;
+}
 
-.TopBarNavLink{
+.TopBarNavLink {
     text-decoration: none;
     font-size: 18px;
     font-weight: 400;
@@ -24,11 +32,29 @@ a{
     transition: 500ms;
     color: white;
 }
-.TopBarNavLink:hover{
-    color: #0dcaf0;
+
+.TopBarNavLink:hover {
+    color: #81689D;
 
 }
-.active{
-    color: #0dcaf0;
+
+.active {
+    color: #FFD0EC;
     font-weight: 600;
+}
+
+.Header {
+    width: 100%;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.HeaderLogo {
+    width: 200px;
+    height: 100px;
+}
+
+.HeaderImage {
+    height: 100px;
+
 }
