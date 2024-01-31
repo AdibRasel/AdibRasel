@@ -10,6 +10,9 @@ a {
 .CommonBG {
     background-color: #81689D;
 }
+.CommonColor{
+    color: #1F2544;
+}
 
 .CommonHover {
     transition: 500ms;
