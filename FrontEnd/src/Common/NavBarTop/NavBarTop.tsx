@@ -57,7 +57,7 @@ const NavBarTop = () => {
               <Nav.Link href="https://adibrasel.github.io/Express_js/" target="_blank"><span className='CommonColor CommonHover fst-italic'> Express JS </span></Nav.Link>
               <Nav.Link href="https://adibrasel.github.io/React_JS/index.html" target="_blank"><span className='CommonColor CommonHover fst-italic'> React JS </span></Nav.Link>
               <Nav.Link href="https://adibrasel.github.io/Node_JS/" target="_blank"><span className='CommonColor CommonHover fst-italic'> Node JS </span></Nav.Link>
-              <Nav.Link href="https://adibrasel.github.io/API/" target="_blank"><span className='CommonColor CommonHover fst-italic'> API </span></Nav.Link>
+              <Nav.Link href="https://adibrasel.github.io/API/" target="_blank"><span className='CommonColor CommonHover fst-italic'> Rest API </span></Nav.Link>
 
 
               {/* DropDown Start  */}
