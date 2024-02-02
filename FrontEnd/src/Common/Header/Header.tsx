@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -10,24 +11,30 @@ import HeaderImage from "../../Assets/Image/Header-Image.png"
 
 const Header = () => {
   return (<>
-  
-  
-  <Container>
-        <Row className='Header'>
-          <Col sm={4} className='text-center text-sm-start '>
-            <img src={Logo}  className='img-fluid HeaderLogo' alt="" />
-          </Col>
 
 
-          <Col sm={8} className='text-center text-sm-end text-white'>
+    <Container>
+      <Row className='Header'>
+        <Col sm={4} className='text-center text-sm-start '>
+          <NavLink className="TopBarNavLink" to="/">
+            <img src={Logo} className='img-fluid HeaderLogo' alt="" />
+          </NavLink>
+
+        </Col>
+
+
+        <Col sm={8} className='text-center text-sm-end text-white'>
+          <NavLink className="TopBarNavLink" to="/">
             <img src={HeaderImage} className='img-fluid HeaderImage' alt="" />
-          </Col>
-        </Row>
-      </Container>
-  
-  
-  
-  
+          </NavLink>
+
+        </Col>
+      </Row>
+    </Container>
+
+
+
+
   </>)
 }
 

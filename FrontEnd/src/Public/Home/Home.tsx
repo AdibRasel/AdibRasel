@@ -5,6 +5,7 @@ import Header from '../../Common/Header/Header'
 import TopBar from '../../Common/Header/TopBar'
 import React from 'react'
 import HomeIntroCarousel from 'Public/Components/Carousel/HomeIntroCarousel'
+import Topic from 'Public/Components/Topic/Topic'
 
 const Home = () => {
   return (<>
@@ -17,19 +18,15 @@ const Home = () => {
     <NavBarTop />
 
     <div className="container">
+      <hr />
       <div className="row">
-        <div className="col-md-7">
+        <div className="col-md-8">
 
           <HomeIntroCarousel />
 
         </div>
-        <div className="col-md-5">
-          <ul>
-            <li> Lorem ipsum dolor sit amet.</li>
-            <li> Lorem ipsum dolor sit amet.</li>
-            <li> Lorem ipsum dolor sit amet.</li>
-            <li> Lorem ipsum dolor sit amet.</li>
-          </ul>
+        <div className="col-md-4">
+          <Topic />
         </div>
       </div>
     </div>

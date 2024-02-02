@@ -4,13 +4,15 @@ body {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
+    color: white !important;
 }
 
 .CommonBG {
     background-color: #81689D;
 }
-.CommonColor{
+
+.CommonColor {
     color: #1F2544;
 }
 
@@ -41,10 +43,12 @@ a {
 
 }
 
+
 .active {
-    color: #FFD0EC;
+    color: #FFD0EC !important;
     font-weight: 600;
 }
+
 
 .Header {
     width: 100%;
@@ -60,4 +64,9 @@ a {
 .HeaderImage {
     height: 100px;
 
+}
+
+.active-link {
+    color: red;
+    background-color: blue;
 }
