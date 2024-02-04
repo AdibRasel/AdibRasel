@@ -21,6 +21,36 @@ const Topic = () => {
                     Germany Language
                 </div>
             </NavLink>
+            <NavLink className="" target="_blank" to="https://adibrasel.github.io/Javascript/" style={{ textDecoration: "none", }}>
+                <div className="" style={{ padding: "10px", backgroundColor: "#1F2544", marginTop: "5px", borderRadius: "10px", cursor: "pointer" }}>
+                    Javascript
+                </div>
+            </NavLink>
+            <NavLink className="" target="_blank" to="https://adibrasel.github.io/MongoDB/" style={{ textDecoration: "none", }}>
+                <div className="" style={{ padding: "10px", backgroundColor: "#1F2544", marginTop: "5px", borderRadius: "10px", cursor: "pointer" }}>
+                    MongoDB
+                </div>
+            </NavLink>
+            <NavLink className="" target="_blank" to="https://adibrasel.github.io/Express_js/" style={{ textDecoration: "none", }}>
+                <div className="" style={{ padding: "10px", backgroundColor: "#1F2544", marginTop: "5px", borderRadius: "10px", cursor: "pointer" }}>
+                    Express JS
+                </div>
+            </NavLink>
+            <NavLink className="" target="_blank" to="https://adibrasel.github.io/React_JS/" style={{ textDecoration: "none", }}>
+                <div className="" style={{ padding: "10px", backgroundColor: "#1F2544", marginTop: "5px", borderRadius: "10px", cursor: "pointer" }}>
+                    React JS
+                </div>
+            </NavLink>
+            <NavLink className="" target="_blank" to="https://adibrasel.github.io/Node_JS/" style={{ textDecoration: "none", }}>
+                <div className="" style={{ padding: "10px", backgroundColor: "#1F2544", marginTop: "5px", borderRadius: "10px", cursor: "pointer" }}>
+                    Node JS
+                </div>
+            </NavLink>
+            <NavLink className="" target="_blank" to="https://adibrasel.github.io/API/" style={{ textDecoration: "none", }}>
+                <div className="" style={{ padding: "10px", backgroundColor: "#1F2544", marginTop: "5px", borderRadius: "10px", cursor: "pointer" }}>
+                    Rest API
+                </div>
+            </NavLink>
             <NavLink className="" to="/contact" style={{ textDecoration: "none" }}>
                 <div className="" style={{ padding: "10px", backgroundColor: "#1F2544", marginTop: "5px", borderRadius: "10px", cursor: "pointer" }}>
                     contact

@@ -66,7 +66,40 @@ a {
 
 }
 
-.active-link {
-    color: red;
-    background-color: blue;
+
+.NavBar{
+    /* margin-right: 10px; */
+    color: #47507b;
+    font-weight: 600;
+    transition: 30ms;
+}
+
+.NavBar:hover{
+    font-weight: 600;
+    border-bottom: 3px solid #47507b;
+    color: #82699e;
+}
+.PublicNavbarActive a.active{
+    font-weight: 600 !important;
+    border-bottom: 3px solid #47507b;
+    background-color:#ffd0cf !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+}
+
+.NavBarTopMenu{
+    padding: 10px;
+    background-color: #82699e;
+    margin-right: 10px;
+    border-radius: 10px;
+    color: #ffd0d1;
+    font-weight: 600;
+    transition: 500ms;
+    letter-spacing: 2px;
+}
+
+.NavBarTopMenu:hover{
+    color: #ffd0d1;
+    background-color: #474f7a;
 }
