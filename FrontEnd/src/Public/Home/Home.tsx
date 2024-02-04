@@ -13,6 +13,7 @@ import Social from 'Public/Components/Social/Social'
 import TitlePng from "../../Assets/Image/TitlePng.png"
 import Calendar from '../../Common/Calendar/Calendar'
 import BackToTopButton from '../../Common/BackToTopButton/BackToTopButton'
+import Footer from '../../Common/Footer/Footer'
 
 const Home = () => {
   return (<>
@@ -50,9 +51,9 @@ const Home = () => {
           <TopicCard />
 
         </div>
-        
+
         <div className="col-md-4">
-          
+
           <Social />
 
           <Calendar />
@@ -64,7 +65,9 @@ const Home = () => {
     </div>
 
 
-<BackToTopButton />
+    <BackToTopButton />
+
+    <Footer />
 
 
   </>)

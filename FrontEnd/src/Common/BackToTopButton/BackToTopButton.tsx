@@ -31,10 +31,6 @@ const BackToTopButton = () => {
           <HiArrowSmUp/>
         </button>
       )}
-      {/* Your main content goes here */}
-      <div>
-        {/* ... */}
-      </div>
     </div>
   );
 };
