@@ -1,8 +1,8 @@
 // import TopBar from 'Common/Header/TopBar'
 
-import NavBarTop from '../../Common/NavBar/NavBarTop'
-import Header from '../../Common/Header/Header'
-import TopBar from '../../Common/Header/TopBar'
+import NavBarTop from '../../../Common/NavBar/NavBarTop'
+import Header from '../../../Common/Header/Header'
+import TopBar from '../../../Common/Header/TopBar'
 import React from 'react'
 import HomeIntroCarousel from 'Public/Components/Carousel/HomeIntroCarousel'
 import Topic from 'Public/Components/Topic/Topic'
@@ -11,9 +11,9 @@ import TopicCard from 'Public/Components/TopicCard/TopicCard'
 import Social from 'Public/Components/Social/Social'
 
 import TitlePng from "../../Assets/Image/TitlePng.png"
-import Calendar from '../../Common/Calendar/Calendar'
-import BackToTopButton from '../../Common/BackToTopButton/BackToTopButton'
-import Footer from '../../Common/Footer/Footer'
+import Calendar from '../../../Common/Calendar/Calendar'
+import BackToTopButton from '../../../Common/BackToTopButton/BackToTopButton'
+import Footer from '../../../Common/Footer/Footer'
 
 const Home = () => {
   return (<>

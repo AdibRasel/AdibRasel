@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
-import Home from '../Public/Home/Home';
+import Home from '../Public/Page/Home/Home';
 
 const AuthenticationRouter = () => {
 
