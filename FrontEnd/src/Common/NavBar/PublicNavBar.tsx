@@ -28,7 +28,7 @@ const PublicNavBar = () => {
         <>
             <Container>
 
-                <Navbar expand="lg" style={{ backgroundColor: "#ffffffeb" }} className={`${isScrolled ? 'fixed-top container' : ''}`}>
+                <Navbar expand="lg" style={{ backgroundColor: "#ffffffeb" }} className={`${isScrolled ? 'fixed-top container px-3' : ''}`}>
                     <Container fluid>
                         <Navbar.Brand href="#">
                             <FaHome className='CommonColor CommonHover' />

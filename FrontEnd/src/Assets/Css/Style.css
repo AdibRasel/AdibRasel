@@ -13,8 +13,10 @@ a {
 }
 
 .CommonColor {
-    color: #1F2544;
+    color: #1F2544 !important;
 }
+
+
 
 .CommonHover {
     transition: 500ms;
@@ -102,4 +104,10 @@ a {
 .NavBarTopMenu:hover{
     color: #ffd0d1;
     background-color: #474f7a;
+}
+.SocialItem{
+    transition: 700ms;
+}
+.SocialItem:hover{
+    color: #81689D !important;
 }
