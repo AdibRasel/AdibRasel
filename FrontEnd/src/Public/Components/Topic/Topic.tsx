@@ -16,7 +16,7 @@ const Topic = () => {
                     Home
                 </div>
             </NavLink>
-            <NavLink className="" to="/GermanyLanguage" style={{ textDecoration: "none" }}>
+            <NavLink className="" to="/Category" style={{ textDecoration: "none" }}>
                 <div className="" style={{ padding: "10px", backgroundColor: "#1F2544", marginTop: "5px", borderRadius: "10px", cursor: "pointer" }}>
                     Germany Language
                 </div>

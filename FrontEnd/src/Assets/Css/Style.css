@@ -111,3 +111,6 @@ a {
 .SocialItem:hover{
     color: #81689D !important;
 }
+.Breadcrum{
+    color: black;
+}
