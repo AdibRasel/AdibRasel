@@ -6,6 +6,7 @@ import PublicNavBar from 'Common/NavBar/PublicNavBar'
 import BackToTopButton from '../../../Common/BackToTopButton/BackToTopButton'
 import Footer from '../../../Common/Footer/Footer'
 import Calendar from '../../../Common/Calendar/Calendar'
+import ReadPost from './ReadPost'
 
 const Post = () => {
   return (<>
@@ -24,7 +25,7 @@ const Post = () => {
       <hr />
       <div className="row">
         <div className="col-md-8">
-          {/* <AllCategory /> */}
+          <ReadPost />
         </div>
         <div className="col-md-4">
           <Topic />

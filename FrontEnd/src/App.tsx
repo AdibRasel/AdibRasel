@@ -3,7 +3,7 @@ import AuthenticationRouter from './Router/AuthenticationRouter';
 import UnAuthenticatedRouter from './Router/UnAuthenticatedRouter';
 
 const App: React.FC = () => {
-  const [Token, setToken] = useState(true);
+  const [Token, setToken] = useState(false);
 
   useEffect(() => {
     const LoginToken = localStorage.getItem('Token')

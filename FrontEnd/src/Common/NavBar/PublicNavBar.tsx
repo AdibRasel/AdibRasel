@@ -30,9 +30,11 @@ const PublicNavBar = () => {
 
                 <Navbar expand="lg" style={{ backgroundColor: "#ffffffeb" }} className={`${isScrolled ? 'fixed-top container px-3' : ''}`}>
                     <Container fluid>
-                        <Navbar.Brand href="#">
+                        {/* <Navbar.Brand href="/"> */}
+                        <NavLink className="TopBarNavLink" to="/">
                             <FaHome className='CommonColor CommonHover' />
-                        </Navbar.Brand>
+                        </NavLink>
+                        {/* </Navbar.Brand> */}
 
                         <Navbar.Toggle aria-controls="navbarScroll" />
 

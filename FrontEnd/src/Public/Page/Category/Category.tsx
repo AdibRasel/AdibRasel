@@ -7,6 +7,9 @@ import BackToTopButton from '../../../Common/BackToTopButton/BackToTopButton'
 import Footer from '../../../Common/Footer/Footer'
 import Calendar from '../../../Common/Calendar/Calendar'
 import AllCategory from './AllCategory'
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
+
+import { NavLink } from 'react-router-dom';
 
 const Category = () => {
   return (<>
@@ -23,6 +26,26 @@ const Category = () => {
 
     <div className="container">
       <hr />
+
+
+
+      {/* <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
+          Library
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>Data</Breadcrumb.Item>
+      </Breadcrumb> */}
+
+
+
+
+
+
+
+
+
+
       <div className="row">
         <div className="col-md-8">
           <AllCategory />

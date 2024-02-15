@@ -45,9 +45,11 @@ const Home = () => {
       <div className="row">
         <div className="col-md-8">
 
-          <h2 className='fs-3 CommonColor'>TOPIC</h2>
+          <h2 className='fs-3 CommonColor'>Category</h2>
           <hr />
 
+          {/* Category same TopicCard (Category===TopicCard) */}
+          
           <TopicCard />
 
         </div>

@@ -67,6 +67,10 @@ const TopBar = () => {
               Contact
             </NavLink>
 
+            <NavLink className="TopBarNavLink" to="/Login">
+              Login
+            </NavLink>
+
           </Col>
         </Row>
       </Container>

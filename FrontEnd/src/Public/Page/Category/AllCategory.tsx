@@ -11,25 +11,24 @@ const AllCategory = () => {
 
     return (<>
 
-        <h2 className='fs-3 CommonColor'>TOPIC</h2>
 
+        {/* ========= Breadcrumb start ========== */}
+        <div className=''>
+            <NavLink to="/">
+                <span className='text-muted'>Home</span>
+            </NavLink>
 
-        <div className="d-flex justify-content-start">
-            <div className="text-muted">
-                <FaEdit /> <span>Rasel Hossain Adib</span>
-            </div>
-            <div className="text-muted">
+            {" > "}
 
-                - <MdOutlineDateRange /> <span>04/02/2024</span>
-            </div>
+            <span>Germany Language</span>
+
         </div>
+        {/* ========= Breadcrumb end ========== */}
 
+        {/* Title start */}
+        <h2 className='fs-3 CommonColor'>Germany Language</h2>
+        {/* Title end */}
 
-        <div>
-            <img src={Germany} style={{ width: "100%", height: "250px" }} alt="" />
-        </div>
-
-        <hr />
 
 
 
@@ -64,7 +63,7 @@ const AllCategory = () => {
                     <NavLink className="TopBarNavLink" to="/Post">
                         <Button size="sm" className='btn btn-dark mt-1'>See More<FaBookReader /></Button>
                     </NavLink>
-                    
+
                 </div>
             </div>
         </div>
@@ -96,7 +95,7 @@ const AllCategory = () => {
 
                             ...</span>
                     </div>
-                    
+
                     <NavLink className="TopBarNavLink" to="/Post">
                         <Button size="sm" className='btn btn-dark mt-1'>See More<FaBookReader /></Button>
                     </NavLink>
@@ -133,7 +132,7 @@ const AllCategory = () => {
 
                             ...</span>
                     </div>
-                    
+
                     <NavLink className="TopBarNavLink" to="/Post">
                         <Button size="sm" className='btn btn-dark mt-1'>See More<FaBookReader /></Button>
                     </NavLink>
