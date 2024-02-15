@@ -18,14 +18,24 @@ const ForgotPassword = () => {
             ))}
             <div className="signin">
                 <div className="content">
+
+                    <div className="text-center">
+                        <NavLink to="/" className="p-2">
+                            Home
+                        </NavLink>
+                        <NavLink to="/" className="p-2">
+                            About
+                        </NavLink>
+                        <NavLink to="/" className="p-2">
+                            Contact
+                        </NavLink>
+                    </div>
+
                     <h2>Forgot Password</h2>
                     <div className="form">
                         <div className="inputBox">
                             <input type="text" /> <i>Enter your forgotten account Email</i>
                         </div>
-                        {/* <div className="inputBox">
-                            <input type="password" /> <i>Password</i>
-                        </div> */}
                         <div className="links">
                             <NavLink to="/Registration">
                                 Registration

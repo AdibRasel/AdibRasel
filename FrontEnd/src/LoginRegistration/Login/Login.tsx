@@ -18,6 +18,20 @@ const Login = () => {
             ))}
             <div className="signin">
                 <div className="content">
+
+                <div className="text-center">
+                        <NavLink to="/" className="p-2">
+                            Home
+                        </NavLink>
+                        <NavLink to="/" className="p-2">
+                            About
+                        </NavLink>
+                        <NavLink to="/" className="p-2">
+                            Contact
+                        </NavLink>
+                    </div>
+
+                    
                     <h2>Login</h2>
                     <div className="form">
                         <div className="inputBox">

@@ -7,13 +7,13 @@
 
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #333333 inset !important; 
+    -webkit-box-shadow: 0 0 0px 1000px #474F7A inset !important; 
     color: #fff !important; 
 }
 
 
 .SectionBG{
-    background-color: #000;
+    background-color: #1F2544;
 }
 section 
 {
@@ -33,7 +33,7 @@ section::before
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#000,#0f0,#000);
+  background: linear-gradient(#000,#FFD0EC,#000);
   animation: animate 5s linear infinite;
 }
 @keyframes animate 
@@ -53,13 +53,13 @@ section span
   display: block;
   width: calc(6.25vw - 2px);
   height: calc(6.25vw - 2px);
-  background: #181818;
+  background: #474F7A;
   z-index: 2;
   transition: 1.5s;
 }
 section span:hover 
 {
-  background: #0f0;
+  background: #FFD0EC;
   transition: 0s;
 }
 
@@ -67,12 +67,12 @@ section .signin
 {
   position: absolute;
   width: 400px;
-  background: #222;  
+  background: #1F2544;  
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 20px 40px 40px 40px;
   border-radius: 4px;
   box-shadow: 0 15px 35px rgba(0,0,0,9);
 }
@@ -84,13 +84,16 @@ section .signin .content
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 40px;
+  /* gap: 40px; */
 }
 section .signin .content h2 
 {
   font-size: 2em;
-  color: #0f0;
+  color: #FFD0EC;
   text-transform: uppercase;
+  font-weight: 700;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 section .signin .content .form 
 {
@@ -108,7 +111,7 @@ section .signin .content .form .inputBox input
 {
   position: relative;
   width: 100%;
-  background: #333;
+  background: #474F7A;
   border: none;
   outline: none;
   padding: 25px 10px 7.5px;
@@ -152,14 +155,14 @@ section .signin .content .form .inputBox i
 }
 .signin .content .form .links a:nth-child(2)
 {
-  color: #0f0;
+  color: #FFD0EC;
   font-weight: 600;
 }
 .signin .content .form .inputBox input[type="submit"]
 {
   padding: 10px;
-  background: #0f0;
-  color: #000;
+  background: #81689D;
+  color: #fff;
   font-weight: 600;
   font-size: 1.35em;
   letter-spacing: 0.05em;
