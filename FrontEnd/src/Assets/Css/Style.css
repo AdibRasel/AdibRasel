@@ -38,12 +38,13 @@ a {
     margin-right: 15px;
     transition: 500ms;
     color: white;
+    cursor: pointer;
 }
 
-.TopBarNavLink:hover {
+/* .TopBarNavLink:hover {
     color: #81689D;
 
-}
+} */
 
 
 .active {
@@ -113,4 +114,31 @@ a {
 }
 .Breadcrum{
     color: black;
+}
+
+.DashboardCardBox{
+    width: 95%;
+    height: 300px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 6px #333;
+    background-color: #474F7A;
+    color: white;
+    margin-bottom: 10px;
+    transition: 1000ms;
+}
+.DashboardCardBox:hover{
+    background-color: #474f7ae7;
+}
+.DashboardCardBox button{
+    margin-top: 5px;
+    width: 100%;
+}
+
+
+.DashboardCardBox h1 svg{
+    font-size: 100px;
 }

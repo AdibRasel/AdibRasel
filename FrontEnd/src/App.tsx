@@ -6,11 +6,14 @@ const App: React.FC = () => {
   const [Token, setToken] = useState(true);
 
   useEffect(() => {
-    const LoginToken = localStorage.getItem('Token')
+    const LoginToken = localStorage.getItem('token')
 
     if(LoginToken){
       setToken(true)
+    }else{
+      setToken(false)
     }
+    console.log(LoginToken)
 
   }, []);
 

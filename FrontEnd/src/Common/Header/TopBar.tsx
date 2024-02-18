@@ -5,9 +5,27 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import { useNavigate } from 'react-router-dom';
+
 import { FaGithubSquare, FaLinkedin, FaMailBulk, FaFacebookSquare, FaPhoneSquare } from "react-icons/fa";
 
 const TopBar = () => {
+
+  const navigate = useNavigate();
+
+  const Login = () => {
+    localStorage.setItem('token', "true");
+    navigate('/Dashboard');
+    window.location.reload();
+  }
+
+  const Logout = () => {
+    localStorage.clear();
+    navigate('/');
+    window.location.reload();
+  }
+
+
 
   function formatDate() {
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -67,9 +85,12 @@ const TopBar = () => {
               Contact
             </NavLink>
 
-            <NavLink className="TopBarNavLink" to="/Login">
+            <span className="TopBarNavLink" onClick={Login}>
               Login
-            </NavLink>
+            </span>
+            <span className="TopBarNavLink" onClick={Logout}>
+              Log Out
+            </span>
 
           </Col>
         </Row>
