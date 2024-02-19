@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -51,19 +51,22 @@ const AuthenticNav = () => {
                             <NavLink className="TopBarNavLink" to="/">
                                 <span className='NavBar'>Home</span>
                             </NavLink>
-                            <NavLink className="TopBarNavLink" to="/1">
+                            <NavLink className="TopBarNavLink" to="/AuthenticUser">
                                 <span className='NavBar'>User</span>
                             </NavLink>
-                            <NavLink className="TopBarNavLink" to="/2">
+                            <NavLink className="TopBarNavLink" to="/AuthenticUserProfile">
+                                <span className='NavBar'>User Profile</span>
+                            </NavLink>
+                            <NavLink className="TopBarNavLink" to="/AuthenticCategory">
                                 <span className='NavBar'>Category</span>
                             </NavLink>
-                            <NavLink className="TopBarNavLink" to="/3">
+                            <NavLink className="TopBarNavLink" to="/AuthenticPost">
                                 <span className='NavBar'>Post</span>
                             </NavLink>
-                            <NavLink className="TopBarNavLink" to="/3">
+                            <NavLink className="TopBarNavLink" to="/AuthenticComment">
                                 <span className='NavBar'>Comment</span>
                             </NavLink>
-                            <NavLink className="TopBarNavLink" to="/3">
+                            <NavLink className="TopBarNavLink" to="/AuthenticProfile">
                                 <span className='NavBar'>Profile</span>
                             </NavLink>
                             

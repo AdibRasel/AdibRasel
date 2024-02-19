@@ -142,3 +142,19 @@ a {
 .DashboardCardBox h1 svg{
     font-size: 100px;
 }
+
+
+.AuthenticAction{
+    color: white;
+    background-color: #474F7A;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.AuthenticActionDelete{
+    color: white;
+    background-color: #dc3545;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
