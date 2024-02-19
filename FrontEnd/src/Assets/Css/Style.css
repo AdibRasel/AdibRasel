@@ -158,3 +158,12 @@ a {
     border-radius: 5px;
     cursor: pointer;
 }
+
+
+
+.ql-editor{
+    max-height: 100%;
+    min-height: 650px;
+    color: black;
+    font-size: 20px;
+}
