@@ -3,28 +3,27 @@ import TopBar from 'Common/Header/TopBar'
 import React from 'react'
 import AuthenticCategoryList from './AuthenticCategoryList'
 import Footer from 'Common/Footer/Footer'
+import AuthenticLayout from 'Authentic/AuthenticLayout/AuthenticLayout'
 
 const AuthenticCategory = () => {
   return (<>
 
-
-    <TopBar />
-
-    <AuthenticNav />
-
-    <hr />
+    <AuthenticLayout>
 
 
-    <AuthenticCategoryList />
+      <hr />
 
 
-    <Footer />
+      <AuthenticCategoryList />
+
+    </AuthenticLayout>
 
 
 
 
 
-</>)
+
+  </>)
 }
 
 export default AuthenticCategory

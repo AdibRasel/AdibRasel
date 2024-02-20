@@ -3,22 +3,24 @@ import TopBar from 'Common/Header/TopBar'
 import React from 'react'
 import UserList from './UserList'
 import Footer from 'Common/Footer/Footer'
+import AuthenticLayout from 'Authentic/AuthenticLayout/AuthenticLayout'
 
 const AuthenticUser = () => {
     return (<>
 
 
-        <TopBar />
 
-        <AuthenticNav />
-
-        <hr />
+        <AuthenticLayout>
 
 
-        <UserList />
+            <hr />
 
 
-        <Footer />
+            <UserList />
+
+        </AuthenticLayout>
+
+
 
 
 

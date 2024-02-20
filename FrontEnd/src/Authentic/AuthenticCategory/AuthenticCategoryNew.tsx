@@ -1,3 +1,4 @@
+import AuthenticLayout from 'Authentic/AuthenticLayout/AuthenticLayout';
 import AuthenticNav from 'Authentic/Components/AuthenticNav/AuthenticNav';
 import Footer from 'Common/Footer/Footer';
 import TopBar from 'Common/Header/TopBar';
@@ -29,32 +30,38 @@ const AuthenticCategoryNew: React.FC = () => {
 
     return (
         <>
-            <TopBar />
-            <AuthenticNav />
-            <hr />
-            <div className="container text-editor">
 
-                <div className="d-flex justify-content-between mb-2">
-                    <div className="text-muted">
-                        <h2>Create Category</h2>
+
+            <AuthenticLayout>
+
+                <hr />
+                <div className="container text-editor">
+
+                    <div className="d-flex justify-content-between mb-2">
+                        <div className="text-muted">
+                            <h2>Create Category</h2>
+                        </div>
+                        <div className="text-muted mt-2">
+                            <button className='btn btn-primary' style={{ width: "200px" }}>Save</button>
+                        </div>
                     </div>
-                    <div className="text-muted mt-2">
-                        <button className='btn btn-primary' style={{width:"200px"}}>Save</button>
-                    </div>
+
+
+
+                    <ReactQuill
+                        theme="snow"
+                        value={text}
+                        onChange={setText}
+                        modules={modules}
+                        formats={formats}
+                        className='AuthenticCategoryNewInput'
+                    />
                 </div>
 
 
-
-                <ReactQuill
-                    theme="snow"
-                    value={text}
-                    onChange={setText}
-                    modules={modules}
-                    formats={formats}
-                    className='AuthenticCategoryNewInput'
-                />
-            </div>
-            <Footer />
+            </AuthenticLayout>
+        
+        
         </>
     );
 }

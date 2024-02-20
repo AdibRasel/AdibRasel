@@ -10,6 +10,8 @@ import AuthenticComment from 'Authentic/AuthenticComment/AuthenticComment';
 import AuthenticProfile from 'Authentic/AuthenticProfile/AuthenticProfile';
 import AuthenticUserProfile from 'Authentic/AuthenticUser/AuthenticUserProfile';
 import AuthenticCategoryNew from 'Authentic/AuthenticCategory/AuthenticCategoryNew';
+import AuthenticCategoryView from 'Authentic/AuthenticCategory/AuthenticCategoryView';
+import AuthenticCategoryUpdate from 'Authentic/AuthenticCategory/AuthenticCategoryUpdate';
 
 
 const AuthenticationRouter = () => {
@@ -31,6 +33,8 @@ const AuthenticationRouter = () => {
                 <Route path="/AuthenticProfile" element={<AuthenticProfile />} />
                 <Route path="/AuthenticUserProfile" element={<AuthenticUserProfile />} />
                 <Route path="/AuthenticCategoryNew" element={<AuthenticCategoryNew />} />
+                <Route path="/AuthenticCategoryView" element={<AuthenticCategoryView />} />
+                <Route path="/AuthenticCategoryUpdate" element={<AuthenticCategoryUpdate />} />
                 
 
 

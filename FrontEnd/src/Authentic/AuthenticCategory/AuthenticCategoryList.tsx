@@ -88,12 +88,12 @@ const AuthenticCategoryList = () => {
 
                 <div className="col-md-1">
                     <div className="d-flex justify-content-between">
-                        <NavLink to="/AuthenticCategory">
+                        <NavLink to="/AuthenticCategoryView">
                             <div className="AuthenticAction mx-1">
                                 <FaEye />
                             </div>
                         </NavLink>
-                        <NavLink to="/AuthenticCategory">
+                        <NavLink to="/AuthenticCategoryUpdate">
                             <div className="AuthenticAction mx-1">
                                 <GrUpdate />
                             </div>
@@ -142,12 +142,12 @@ const AuthenticCategoryList = () => {
 
                 <div className="col-md-1">
                     <div className="d-flex justify-content-between">
-                        <NavLink to="/AuthenticCategory">
+                        <NavLink to="/AuthenticCategoryView">
                             <div className="AuthenticAction mx-1">
                                 <FaEye />
                             </div>
                         </NavLink>
-                        <NavLink to="/AuthenticCategory">
+                        <NavLink to="/AuthenticCategoryUpdate">
                             <div className="AuthenticAction mx-1">
                                 <GrUpdate />
                             </div>
@@ -197,12 +197,12 @@ const AuthenticCategoryList = () => {
 
                 <div className="col-md-1">
                     <div className="d-flex justify-content-between">
-                        <NavLink to="/AuthenticCategory">
+                        <NavLink to="/AuthenticCategoryView">
                             <div className="AuthenticAction mx-1">
                                 <FaEye />
                             </div>
                         </NavLink>
-                        <NavLink to="/AuthenticCategory">
+                        <NavLink to="/AuthenticCategoryUpdate">
                             <div className="AuthenticAction mx-1">
                                 <GrUpdate />
                             </div>

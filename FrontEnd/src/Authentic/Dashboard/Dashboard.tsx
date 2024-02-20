@@ -8,23 +8,19 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from './Card';
 import Footer from 'Common/Footer/Footer'
+import AuthenticLayout from 'Authentic/AuthenticLayout/AuthenticLayout'
 
 const Dashboard = () => {
     return (<>
 
 
-        <TopBar />
+   
 
-        <AuthenticNav />
+        <AuthenticLayout>
 
-        <hr />
+            <Card />
 
-        <Card />
-
-        <Footer />
-
-
-
+        </AuthenticLayout>
 
 
 
