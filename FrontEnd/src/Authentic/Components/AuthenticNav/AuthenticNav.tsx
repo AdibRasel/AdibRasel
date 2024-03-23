@@ -72,9 +72,9 @@ const AuthenticNav = () => {
                             <NavLink className="TopBarNavLink" to="/MultipleEmailSend">
                                 <span className='NavBar'>Multiple Email Send</span>
                             </NavLink>
-                            <NavLink className="TopBarNavLink" to="/SingleEmailSend">
+                            {/* <NavLink className="TopBarNavLink" to="/SingleEmailSend">
                                 <span className='NavBar'>Single Email Send</span>
-                            </NavLink>
+                            </NavLink> */}
                             {/* <NavLink className="TopBarNavLink" to="/WebsiteToPdf">
                                 <span className='NavBar'>Website To Pdf</span>
                             </NavLink> */}

@@ -5,6 +5,7 @@ import 'react-quill/dist/quill.snow.css';
 import AuthenticLayout from 'Authentic/AuthenticLayout/AuthenticLayout';
 import { TbSettingsUp } from "react-icons/tb";
 import { NavLink } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 const MultipleEmailSend = () => {
     const [messageValue, setMessageValue] = useState<string>("");
@@ -23,6 +24,8 @@ const MultipleEmailSend = () => {
         setCurrentPassword(storedPasswordData);
     }, []);
 
+    const notify = () => toast('Here is your toast.');
+
     const sendButtonHandler = () => {
         const url = "http://localhost:5000/api/v1/MailSend";
         const to = toRef.current?.value || "";
@@ -34,7 +37,8 @@ const MultipleEmailSend = () => {
 
         formattedEmails.forEach(formattedEmail => {
 
-            alert("Email Send Success = " + formattedEmail )
+            // alert("Email Send Success = " + formattedEmail)
+            toast.success("Email Send Success = " + formattedEmail)
 
             const postBody = {
                 CurrentEmail: currentEmail,
@@ -60,6 +64,7 @@ const MultipleEmailSend = () => {
         <AuthenticLayout>
             <hr />
             <div className="container text-editor">
+            {/* <button onClick={notify}>Make me a toastfasdf</button> */}
                 <div className="d-flex justify-content-between">
                     <p>Sender Email Address is: <b>adibrasel.2022@gmail.com</b></p>
                     <NavLink className="text-black" to="/EmailSetting">
@@ -85,6 +90,10 @@ const MultipleEmailSend = () => {
                     <button className='btn btn-primary' style={{ width: "100%" }} onClick={sendButtonHandler}>Send</button>
                 </div>
             </div>
+            <Toaster
+                position="top-right"
+                reverseOrder={true}
+            />
         </AuthenticLayout>
     );
 };
