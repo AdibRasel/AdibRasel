@@ -69,6 +69,15 @@ const AuthenticNav = () => {
                             <NavLink className="TopBarNavLink" to="/AuthenticProfile">
                                 <span className='NavBar'>Profile</span>
                             </NavLink>
+                            <NavLink className="TopBarNavLink" to="/MultipleEmailSend">
+                                <span className='NavBar'>Multiple Email Send</span>
+                            </NavLink>
+                            <NavLink className="TopBarNavLink" to="/SingleEmailSend">
+                                <span className='NavBar'>Single Email Send</span>
+                            </NavLink>
+                            {/* <NavLink className="TopBarNavLink" to="/WebsiteToPdf">
+                                <span className='NavBar'>Website To Pdf</span>
+                            </NavLink> */}
                             
                             
                             {/* Uncomment and add your other NavLinks here */}
