@@ -15,6 +15,7 @@ const MultipleEmailSend = () => {
 
     const [currentEmail, setCurrentEmail] = useState<string>("");
     const [currentPassword, setCurrentPassword] = useState<string>("");
+    const [Category, setCategory] = useState<string>("");
 
     useEffect(() => {
         const storedEmailData: any = localStorage.getItem('SendFromEmail');
@@ -22,12 +23,16 @@ const MultipleEmailSend = () => {
 
         const storedPasswordData: any = localStorage.getItem('NotCoding');
         setCurrentPassword(storedPasswordData);
+
+        const EmailCategory: any = localStorage.getItem('EmailCategory');
+        setCategory(EmailCategory);
     }, []);
 
     const notify = () => toast('Here is your toast.');
 
     const sendButtonHandler = () => {
-        const url = "http://localhost:5000/api/v1/MailSend";
+        const EmailSendURL = "http://localhost:5000/api/v1/MailSend";
+        const CreateEmailSendURL = "http://localhost:5000/api/v1/CreateEmail";
         const to = toRef.current?.value || "";
         const subject = subjectRef.current?.value || "";
 
@@ -40,7 +45,7 @@ const MultipleEmailSend = () => {
             // alert("Email Send Success = " + formattedEmail)
             toast.success("Email Send Success = " + formattedEmail)
 
-            const postBody = {
+            const PostBodyEmailSend = {
                 CurrentEmail: currentEmail,
                 CurrentPassword: currentPassword,
                 to: formattedEmail,
@@ -48,9 +53,36 @@ const MultipleEmailSend = () => {
                 html: messageValue,
             };
 
-            axios.post(url, postBody)
+            axios.post(EmailSendURL, PostBodyEmailSend)
                 .then((res) => {
                     console.log(res);
+                    // Perform any actions after successful POST request
+                })
+                .catch((err) => {
+                    console.log(err);
+                    console.log("error");
+                });
+
+            var EmailSingle = formattedEmail.replace(/,/, '');
+            
+            console.log(EmailSingle)
+
+            const PostBodyEmailCreate = {
+                Email: EmailSingle,
+                Category: Category
+            };
+
+
+            axios.post(CreateEmailSendURL, PostBodyEmailCreate)
+                .then((res) => {
+                    console.log(res);
+                    const Statust = res.data.status;
+                    if (Statust === "success") {
+                        toast.success("Email Save Success = " + EmailSingle)
+                    } else {
+                        toast.error("Email Not Saved, " + Statust + " = " + EmailSingle)
+                    }
+                    console.log(Statust)
                     // Perform any actions after successful POST request
                 })
                 .catch((err) => {
@@ -64,7 +96,7 @@ const MultipleEmailSend = () => {
         <AuthenticLayout>
             <hr />
             <div className="container text-editor">
-            {/* <button onClick={notify}>Make me a toastfasdf</button> */}
+                {/* <button onClick={notify}>Make me a toastfasdf</button> */}
                 <div className="d-flex justify-content-between">
                     <p>Sender Email Address is: <b>adibrasel.2022@gmail.com</b></p>
                     <NavLink className="text-black" to="/EmailSetting">

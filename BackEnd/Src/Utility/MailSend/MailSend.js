@@ -20,7 +20,7 @@ const MailSend = expressAsyncHandler(async (req, res) => {
   };
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      console.log(error);
+      console.log("error");
       res.status(500).json({ message: "Email could not be sent", error: error });
     } else {
       console.log("Email sent successfully!");
