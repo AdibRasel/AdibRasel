@@ -50,13 +50,12 @@ App.use(Limiter)
 
 
 // Mongo DB Database Connection 
-// const uri = "mongodb+srv://Rasal_Hossain:mrhthvgvbnv@cluster0.u9f9cje.mongodb.net/?retryWrites=true&w=majority";
-const uritwo = "mongodb+srv://Rasal_Hossain:mrhthvgvbnv@cluster0.u9f9cje.mongodb.net/AdibRasel?retryWrites=true&w=majority";
-// const UriThree = "mongodb://127.0.0.1:27017/";
+// const uritwo = "mongodb+srv://Rasal_Hossain:mrhthvgvbnv@cluster0.u9f9cje.mongodb.net/AdibRasel?retryWrites=true&w=majority";
+const UriThree = "mongodb://127.0.0.1:27017/";
 // mongodb+srv://Rasal_Hossain:<password>@cluster0.u9f9cje.mongodb.net/
 
 
-Mongose.connect(uritwo, { useNewUrlParser: true, useUnifiedTopology: true })
+Mongose.connect(UriThree, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB...'))
     .catch(err => console.error('Could not connect to MongoDB...', err));
 
