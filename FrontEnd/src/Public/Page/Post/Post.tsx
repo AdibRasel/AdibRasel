@@ -22,10 +22,15 @@ const Post = () => {
     {/* <NavBarTop /> */}
 
     <div className="container">
+
+      <ReadPost />
+
+    </div>
+
+    {/* <div className="container">
       <hr />
       <div className="row">
         <div className="col-md-8">
-          <ReadPost />
         </div>
         <div className="col-md-4">
           <Topic />
@@ -34,7 +39,7 @@ const Post = () => {
         </div>
 
       </div>
-    </div>
+    </div> */}
 
 
 

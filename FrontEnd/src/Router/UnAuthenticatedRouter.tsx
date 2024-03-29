@@ -27,7 +27,7 @@ const UnAuthenticatedRouter = () => {
    
 
 
-        <Route path="*" element={<Home />} />
+        {/* <Route path="*" element={<Home />} /> */}
         <Route path="/" element={<Home />} />
         <Route path="/Category" element={<Category />} />
         <Route path="/Post" element={<Post />} />

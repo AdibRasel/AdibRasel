@@ -14,8 +14,8 @@ const TopBar = () => {
   const navigate = useNavigate();
 
   const Login = () => {
-    localStorage.setItem('token', "true");
-    navigate('/');
+    localStorage.setItem('', "true");
+    navigate('/Login');
     window.location.reload();
   }
 

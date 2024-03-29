@@ -51,24 +51,24 @@ const AuthenticNav = () => {
                             <NavLink className="TopBarNavLink" to="/">
                                 <span className='NavBar'>Home</span>
                             </NavLink>
-                            <NavLink className="TopBarNavLink" to="/AuthenticUser">
+                            {/* <NavLink className="TopBarNavLink" to="/AuthenticUser">
                                 <span className='NavBar'>User</span>
-                            </NavLink>
+                            </NavLink> */}
                             <NavLink className="TopBarNavLink" to="/AuthenticUserProfile">
-                                <span className='NavBar'>User Profile</span>
+                                <span className='NavBar'>Profile</span>
                             </NavLink>
                             <NavLink className="TopBarNavLink" to="/AuthenticCategory">
                                 <span className='NavBar'>Category</span>
                             </NavLink>
-                            <NavLink className="TopBarNavLink" to="/AuthenticPost">
+                            {/* <NavLink className="TopBarNavLink" to="/AuthenticPost">
                                 <span className='NavBar'>Post</span>
-                            </NavLink>
+                            </NavLink> */}
                             <NavLink className="TopBarNavLink" to="/AuthenticComment">
                                 <span className='NavBar'>Comment</span>
                             </NavLink>
-                            <NavLink className="TopBarNavLink" to="/AuthenticProfile">
+                            {/* <NavLink className="TopBarNavLink" to="/AuthenticProfile">
                                 <span className='NavBar'>Profile</span>
-                            </NavLink>
+                            </NavLink> */}
                             <NavLink className="TopBarNavLink" to="/MultipleEmailSend">
                                 <span className='NavBar'>Multiple Email Send</span>
                             </NavLink>

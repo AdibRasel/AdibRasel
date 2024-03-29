@@ -32,12 +32,25 @@ const Registration = () => {
 
                     <h2>Registration</h2>
                     <div className="form">
+
+                        
                         <div className="inputBox">
-                            <input type="text" /> <i>Username</i>
+                            <input type="text" /> <i>Full Name</i>
+                        </div>
+                        <div className="inputBox">
+                            <input type="text" /> <i>Mobile Number</i>
+                        </div>
+                        <div className="inputBox">
+                            <input type="text" /> <i>Email Address</i>
                         </div>
                         <div className="inputBox">
                             <input type="password" /> <i>Password</i>
                         </div>
+
+
+
+
+
                         <div className="links">
                             <NavLink to="/ForgotPassword">
                                 Forgot Password
