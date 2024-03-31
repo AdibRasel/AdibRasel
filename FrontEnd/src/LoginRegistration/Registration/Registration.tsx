@@ -54,23 +54,39 @@ const Registration = () => {
             if (FullName.length <= 2 || Mobile.length <= 10 || Mobile.length >= 12 || Email.length <= 2 || Password.length <= 5) {
 
             } else {
-                
+
                 SetLoading(true)
 
                 try {
                     const registrationAPICall = await RegistrationRequest(postBody);
 
-                    const RegistrationSucess = registrationAPICall?.status
+                    const RegistrationSucess = registrationAPICall?.status;
+                    const Token = registrationAPICall?.UserInfo?.data?.Token;
+
+          
+
+                    // Set the interval time in milliseconds (e.g., 5000 for 5 seconds)
+                    const intervalTime = 1000;
+
+                    // Function to reload the page
+                    const reloadPage = () => {
+                        window.location.reload();
+                    };
+
 
                     if (RegistrationSucess === "Registration Success") {
+
+                        localStorage.setItem("Token", Token);
 
                         SetExistingInfo("")
                         Swal.fire({
                             title: "Good job",
                             text: "Registration Success",
                             icon: "success"
-                          });
+                        });
                         navigate('/Dashboard');
+                        setInterval(reloadPage, intervalTime);
+
 
                     }
                     // Check if ExistInfo exists before accessing its properties
