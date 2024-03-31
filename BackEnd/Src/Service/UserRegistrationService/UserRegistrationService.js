@@ -13,7 +13,7 @@ const UserRegistrationService = async (Request, DataModel) => {
             return { status: "success", data: data }
 
         } else {
-            return { status: "Email Exist" }
+            return { status: "Email Exist" , data : EmailCheck }
         }
 
 

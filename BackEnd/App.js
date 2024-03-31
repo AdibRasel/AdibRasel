@@ -5,6 +5,16 @@ const App = new express();
 const BodyParser = require("body-parser");
 
 
+//Env file config
+const DoteEnv = require("dotenv")
+
+DoteEnv.config({path:"./Config.env"})
+const MongoDBDatabaseUser = process.env.MongoDBDatabaseUser
+const MongoDBDatabasePassword = process.env.MongoDBDatabasePassword
+ 
+
+
+
 // Security Middleware Lib Import
 const RateLimiter = require("express-rate-limit");
 const Helmet = require("helmet")
@@ -50,7 +60,8 @@ App.use(Limiter)
 
 
 // Mongo DB Database Connection 
-const UriOne = "mongodb+srv://Rasal_Hossain:mrhthvgvbnv@cluster0.u9f9cje.mongodb.net/AdibRasel";
+// const UriOne = "mongodb+srv://Rasal_Hossain:mrhthvgvbnv@cluster0.u9f9cje.mongodb.net/AdibRasel";
+const UriOne = "mongodb+srv://" + MongoDBDatabaseUser + ":" + MongoDBDatabasePassword + "@cluster0.u9f9cje.mongodb.net/AdibRasel";
 const UriTwo = "mongodb://127.0.0.1:27017/";
 // mongodb+srv://Rasal_Hossain:<password>@cluster0.u9f9cje.mongodb.net/
 

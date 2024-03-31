@@ -6,6 +6,7 @@ const DataSchema = mongoose.Schema({
     Password:{type:String},
     Image:{type:String},
     Status:{type:String},
+    UserRole:{type:String},
     CreateDate:{type:Date, default:Date.now()},
 },{versionKey: false});
 const UserRegistrationModel = mongoose.model("User", DataSchema);
