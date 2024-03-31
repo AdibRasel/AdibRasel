@@ -5,7 +5,7 @@ import React, { useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 
-
+import Swal from 'sweetalert2'
 
 const Registration = () => {
 
@@ -51,22 +51,12 @@ const Registration = () => {
 
 
 
-            if (FullName.length <= 3) {
-                SetFullNameError("write your name with 3 caractor")
-            } else if (Mobile.length <= 10 || Mobile.length >= 12) {
-                SetMobileError("write valid mobiel number in bdt 11 digit")
-            } else if (Email.length <= 3) {
-                SetEmailError("write your curret email address")
-            } else if (Password.length <= 3) {
-                SetPasswordError("please provie 3 carractor abote password enter")
+            if (FullName.length <= 2 || Mobile.length <= 10 || Mobile.length >= 12 || Email.length <= 2 || Password.length <= 5) {
+
             } else {
-                console.log("success")
-
-
-
-
-
+                
                 SetLoading(true)
+
                 try {
                     const registrationAPICall = await RegistrationRequest(postBody);
                     console.log(registrationAPICall);
@@ -76,6 +66,11 @@ const Registration = () => {
                     if (RegistrationSucess === "Registration Success") {
                         console.log("registration success")
                         SetExistingInfo("")
+                        Swal.fire({
+                            title: "Good job",
+                            text: "Registration Success",
+                            icon: "success"
+                          });
                         navigate('/Dashboard');
 
                     }
@@ -96,20 +91,7 @@ const Registration = () => {
                 SetLoading(false)
 
 
-
-
-
-
-
             }
-
-
-
-
-
-
-
-
 
 
         }
@@ -128,16 +110,18 @@ const Registration = () => {
             const Email = EmailRef.current.value;
             const Password = PasswordRef.current.value;
 
-            if (FullName.length <= 3) {
-                SetFullNameError("write your name with 3 characters");
+            if (FullName.length <= 2) {
+                SetFullNameError("Write Your Full Name With 3 Characters");
             } else if (Mobile.length <= 10 || Mobile.length >= 12) {
-                SetMobileError("write valid mobile number in BDT 11 digits");
-            } else if (Email.length <= 3) {
-                SetEmailError("write your current email address");
-            } else if (Password.length <= 3) {
-                SetPasswordError("please provide 3 characters or more for password entry");
+                SetMobileError("Write Valid Mobile Number In BDT 11 Digits");
+                SetFullNameError("")
+            } else if (Email.length <= 2) {
+                SetEmailError("Write Your Current Email Address");
+                SetMobileError("")
+            } else if (Password.length <= 5) {
+                SetPasswordError("Please Provide 6 Characters Or More For Password Entry");
+                SetEmailError("")
             } else {
-                console.log("success");
                 SetFullNameError("")
                 SetMobileError("")
                 SetEmailError("")
