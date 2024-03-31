@@ -59,12 +59,11 @@ const Registration = () => {
 
                 try {
                     const registrationAPICall = await RegistrationRequest(postBody);
-                    console.log(registrationAPICall);
 
                     const RegistrationSucess = registrationAPICall?.status
 
                     if (RegistrationSucess === "Registration Success") {
-                        console.log("registration success")
+
                         SetExistingInfo("")
                         Swal.fire({
                             title: "Good job",
