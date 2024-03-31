@@ -26,6 +26,9 @@ Router.post("/UserRegistration", UserController.UserRegistration);
 Router.post("/LoginVerify", LoginVerifyController);
 
 
+Router.post("/UserLogin", UserController.UserLogin);
+
+
 
 
 
