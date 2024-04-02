@@ -22,10 +22,10 @@ Router.post("/CreateEmail", EmailController.CreateEmailController);
 // User Registration API
 Router.post("/UserRegistration", UserController.UserRegistration);
 
-
+// Per Relode Login Chack, Login see frond end dashboard desing, login faild see frond end public design 
 Router.post("/LoginVerify", LoginVerifyController);
 
-
+// User Login API
 Router.post("/UserLogin", UserController.UserLogin);
 
 

@@ -115,7 +115,7 @@ const Registration = () => {
 
 
 
-    const OnChangeNalidation: any = () => {
+    const OnChangeValidation: any = () => {
         if (FullNameRef.current &&
             MobileRef.current &&
             EmailRef.current &&
@@ -176,22 +176,22 @@ const Registration = () => {
 
 
                         <div className="inputBox">
-                            <input onChange={OnChangeNalidation} ref={FullNameRef} type="text" /> <i>Full Name</i>
+                            <input onChange={OnChangeValidation} ref={FullNameRef} type="text" /> <i>Full Name</i>
                             <br />
                             <div className="text-danger">{FullNameError}</div>
                         </div>
                         <div className="inputBox">
-                            <input onChange={OnChangeNalidation} ref={MobileRef} type="text" /> <i>Mobile Number</i>
+                            <input onChange={OnChangeValidation} ref={MobileRef} type="text" /> <i>Mobile Number</i>
                             <br />
                             <div className="text-danger">{MobileError}</div>
                         </div>
                         <div className="inputBox">
-                            <input onChange={OnChangeNalidation} ref={EmailRef} type="text" /> <i>Email Address</i>
+                            <input onChange={OnChangeValidation} ref={EmailRef} type="text" /> <i>Email Address</i>
                             <br />
                             <div className="text-danger">{EmailError}</div>
                         </div>
                         <div className="inputBox">
-                            <input onChange={OnChangeNalidation} ref={PasswordRef} type="password" /> <i>Password</i>
+                            <input onChange={OnChangeValidation} ref={PasswordRef} type="password" /> <i>Password</i>
                             <br />
                             <div className="text-danger">{PasswordError}</div>
                         </div>

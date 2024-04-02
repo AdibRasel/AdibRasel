@@ -19,7 +19,7 @@ const UserLoginService = async (Request, DataModel) => {
 
             let Token = await CreateToken(UserEmail, UserPassword)
 
-            return { status: "Success", User:User, Token:Token }
+            return { status: "Login Success", User:User, Token:Token }
 
         } else {
             return { status: "Login Faild" }

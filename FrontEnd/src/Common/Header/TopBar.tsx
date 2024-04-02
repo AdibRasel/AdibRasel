@@ -16,13 +16,13 @@ const TopBar = () => {
   const Login = () => {
     localStorage.setItem('', "true");
     navigate('/Login');
-    window.location.reload();
+    // window.location.reload();
   }
 
-  const Logout = () => {
+  const Registration = () => {
     localStorage.clear();
-    navigate('/');
-    window.location.reload();
+    navigate('/Registration');
+    // window.location.reload();
   }
 
 
@@ -88,8 +88,8 @@ const TopBar = () => {
             <span className="TopBarNavLink" onClick={Login}>
               Login
             </span>
-            <span className="TopBarNavLink" onClick={Logout}>
-              Log Out
+            <span className="TopBarNavLink" onClick={Registration}>
+            Registration
             </span>
 
           </Col>
