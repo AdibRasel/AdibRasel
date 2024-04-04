@@ -1,11 +1,8 @@
 import AuthenticLayout from 'Authentic/AuthenticLayout/AuthenticLayout';
-import AuthenticNav from 'Authentic/Components/AuthenticNav/AuthenticNav';
-import Footer from 'Common/Footer/Footer';
-import TopBar from 'Common/Header/TopBar';
-import axios from 'axios';
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { GiSave } from "react-icons/gi";
 
 const AuthenticCategoryNew: React.FC = () => {
     const [text, setText] = useState<string>("");
@@ -29,28 +26,27 @@ const AuthenticCategoryNew: React.FC = () => {
     ];
 
 
+    // Base64 image start 
+    const [Thumbnail, setThumbnail] = useState<string | null>(null);
 
+    const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        e.preventDefault();
+        const reader = new FileReader();
+        const file = e.target.files && e.target.files[0];
 
-    const SendButton = () => {
-        let URL = "http://localhost:5000/api/v1/MailSend"
+        if (file) {
+            reader.onloadend = () => {
+                const base64String = reader.result as string;
+                setThumbnail(base64String);
+            };
 
-
-        let PostBody: any = {
-            to: "adibrasel.com@gmail.com, adibrasel.2024@gmail.com",
-            subject: "Subject t",
-            html: text,
+            reader.readAsDataURL(file);
         }
-        axios.post(URL, PostBody).then((res) => {
+    };
 
-            console.log(res)
-
-        }).catch((Err) => {
-
-            console.log(Err)
+    // Base64 image end
 
 
-        });
-    }
 
 
 
@@ -61,17 +57,39 @@ const AuthenticCategoryNew: React.FC = () => {
 
             <AuthenticLayout>
 
-                <hr />
-                <div className="container text-editor">
+                <div className="container">
 
-                    <div className="d-flex justify-content-between mb-2">
-                        <div className="text-muted">
+                    <hr />
+                    <div className="row">
+                        <div className="col-md-6">
                             <h2>Create Category</h2>
                         </div>
-                        <div className="text-muted mt-2">
-                            <button className='btn btn-primary' style={{ width: "200px" }} onClick={SendButton}>Send</button>
+
+
+                        <div className="col-md-6 ms-right" style={{ textAlign: "right" }}>
+                            <button className='btn btn-primary' style={{ width: "200px" }} >Create <GiSave /></button>
+                        </div>
+
+                    </div>
+                    <hr />
+
+
+
+                    <div className="">
+                        <div className="input-group mb-3">
+                            <span className="input-group-text" id="basic-addon1">Category Title</span>
+                            {/* <input type="text" className="form-control" placeholder="Category Title"  /> */}
+                            <textarea className="form-control" aria-label="With textarea"></textarea>
+                        </div>
+
+                        <div className="input-group mb-3">
+                            <span className="input-group-text" id="basic-addon1">Category Thumbnail (image)</span>
+                            <input accept="image/*" onChange={handleImageChange} type="file" className="form-control" placeholder="Category Thumbnail" />
                         </div>
                     </div>
+
+
+
 
 
 
@@ -81,8 +99,15 @@ const AuthenticCategoryNew: React.FC = () => {
                         onChange={setText}
                         modules={modules}
                         formats={formats}
-                        className='AuthenticCategoryNewInput'
+                        className=''
                     />
+
+                    <button className='btn btn-primary my-2' style={{ width: "100%" }} >Create <GiSave /></button>
+
+
+                    <p className='my-2'>Thumbnail Preview</p>
+                    {Thumbnail && <img src={Thumbnail} alt="Uploaded" className='img-fluid' />}
+
                 </div>
 
 
