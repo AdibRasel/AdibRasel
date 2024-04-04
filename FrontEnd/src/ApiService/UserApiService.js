@@ -24,7 +24,7 @@ export async function RegistrationRequest(PostBody){
 }
 
 
-// User Login API Call
+// UserDetails API Call
 export async function LoginRequest(PostBody){
     try {
         let URL = BaseURL+"/UserLogin";
@@ -36,6 +36,34 @@ export async function LoginRequest(PostBody){
         }else{
             return {status:"Login Faild"}
         }
+
+       
+    }
+    catch (error) {
+       return { status: "error" , error : error }
+    }
+}
+
+
+// User Details API Call
+export async function UserDetails(PostBody){
+    try {
+        let URL = BaseURL+"/UserDetails";
+
+        const UserEmail = localStorage.getItem("Email");
+        const UserToken = localStorage.getItem("Token");
+
+        const AxiosHeader = { headers: { token: UserToken, email: UserEmail } };
+
+        let Res = await axios.post(URL,PostBody, AxiosHeader)
+
+
+        if(Res.data.status === "Success"){
+            return {status:"User Details Success", UserInfo: Res}
+        }else{
+            return {status:"User Details Faild"}
+        }
+
 
        
     }

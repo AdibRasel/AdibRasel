@@ -5,6 +5,8 @@ const  EmailController  = require('../Controller/EmailController/EmailController
 const UserController = require("../Controller/UserController/UserController");
 const { LoginVerifyController } = require('../Controller/LoginVerifyController/LoginVerifyController');
 
+const AuthVerifyMiddleware = require('../Middleware/AuthVerifyMiddleware');
+
 const Router =express.Router();
 
 
@@ -27,6 +29,10 @@ Router.post("/LoginVerify", LoginVerifyController);
 
 // User Login API
 Router.post("/UserLogin", UserController.UserLogin);
+
+
+// User Details API
+Router.post("/UserDetails", AuthVerifyMiddleware, UserController.UserDetails);
 
 
 
