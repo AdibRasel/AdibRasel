@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 import AuthenticCategory from './AuthenticCategory';
 
 
-const AuthenticCategoryNew: React.FC = () => {
+const AuthenticCategoryNew = () => {
 
     const navigate = useNavigate();
 
