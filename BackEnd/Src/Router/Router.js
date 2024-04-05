@@ -40,6 +40,8 @@ Router.post("/UserDetails", AuthVerifyMiddleware, UserController.UserDetails);
 
 // Create Category API
 Router.post("/CreateCategory", AuthVerifyMiddleware, CategoryController.CreateCategory);
+// Category Details API
+Router.post("/UserAllCategoryDetails", AuthVerifyMiddleware, CategoryController.UserAllCategoryDetails);
 
 
 

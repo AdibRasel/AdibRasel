@@ -27,3 +27,29 @@ export async function CategoryCreateService(PostBody){
        return { status: "error" , error : error }
     }
 }
+
+
+// Category Details Service API Call
+export async function CategoryDetailsService(PostBody){
+    try {
+        let URL = BaseURL+"/UserAllCategoryDetails";
+
+        const UserToken = localStorage.getItem("Token");
+
+        const AxiosHeader = { headers: { token: UserToken } };
+
+        let Res = await axios.post(URL, PostBody, AxiosHeader)
+
+
+        if(Res.data.data.status === "Success"){
+            return {status:"Category Details Faild"}
+        }else{
+            return {status:"Category Details List Success", CategoryInfo: Res}
+        }
+
+       
+    }
+    catch (error) {
+       return { status: "error" , error : error }
+    }
+}
