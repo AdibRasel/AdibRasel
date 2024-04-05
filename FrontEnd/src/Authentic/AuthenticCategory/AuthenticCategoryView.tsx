@@ -7,6 +7,7 @@ import Germany from "../../Public/Components/Carousel/GermanyLanguage.jpg"
 
 
 
+
 const AuthenticCategoryView = () => {
 
 
@@ -19,7 +20,6 @@ const AuthenticCategoryView = () => {
         <AuthenticLayout>
 
             <hr />
-
 
 
 

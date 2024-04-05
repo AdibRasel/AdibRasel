@@ -7,6 +7,8 @@ const { LoginVerifyController } = require('../Controller/LoginVerifyController/L
 
 const AuthVerifyMiddleware = require('../Middleware/AuthVerifyMiddleware');
 
+const CategoryController = require ("../Controller/CategoryController/CategoryController")
+
 const Router =express.Router();
 
 
@@ -36,7 +38,8 @@ Router.post("/UserDetails", AuthVerifyMiddleware, UserController.UserDetails);
 
 
 
-
+// Create Category API
+Router.post("/CreateCategory", AuthVerifyMiddleware, CategoryController.CreateCategory);
 
 
 

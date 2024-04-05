@@ -17,6 +17,7 @@ const App: React.FC = () => {
           setIsLoggedIn(true);
 
           localStorage.setItem("FullName", response.data.UserInfo.FullName);
+          localStorage.setItem("UserID", response.data.UserInfo.UserID);
           localStorage.setItem("Mobile", response.data.UserInfo.Mobile);
           localStorage.setItem("Email", response.data.UserInfo.Email);
           localStorage.setItem("Image", response.data.UserInfo.Image);
