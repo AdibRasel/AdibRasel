@@ -12,36 +12,40 @@ const CategoryController = require ("../Controller/CategoryController/CategoryCo
 const Router =express.Router();
 
 
-// Super Admin Register
+// Email Send ইমেইল সেন্ড
 Router.post("/MailSend", MailSendController);
 Router.post("/EmailValidator", EmailValidator);
 
-
+// Email Send whith create email info / ইমেইল পাঠানোর পর সেই ইমেল টি সেভ হবে।
 Router.post("/CreateEmail", EmailController.CreateEmailController);
 
 
 
 
 // =============== User =================
-// User Registration API
+// User Registration API // ইউজার রেজিষ্ট্রিশন
 Router.post("/UserRegistration", UserController.UserRegistration);
 
-// Per Relode Login Chack, Login see frond end dashboard desing, login faild see frond end public design 
+// Per Relode Login Chack, Login success then see frontend dashboard desing, login faild see frond end public design // লগিন সফল হলে ইউজার ডেসবোর্ড দেখাবে, লগিন ফেইল্ড হলে পাভলিক ডেসবোর্ড দেখাবে। 
 Router.post("/LoginVerify", LoginVerifyController);
 
-// User Login API
+// User Login API // ইউজার লগিন
 Router.post("/UserLogin", UserController.UserLogin);
 
 
-// User Details API
+// User Details API // ইউজারের সকল তথ্য
 Router.post("/UserDetails", AuthVerifyMiddleware, UserController.UserDetails);
 
 
 
-// Create Category API
+// Create Category API // ক্যাটেগরি তৈরি
 Router.post("/CreateCategory", AuthVerifyMiddleware, CategoryController.CreateCategory);
-// Category Details API
+// Category Details API // একজন ইউজারের সকল ক্যটেগরি
 Router.post("/UserAllCategoryDetails", AuthVerifyMiddleware, CategoryController.UserAllCategoryDetails);
+// Category Full Details API // একটি ক্যটেগরির সকল তথ্য
+Router.post("/CategoryFullDetails", AuthVerifyMiddleware, CategoryController.CategoryFullDetails);
+// Category Delete
+Router.post("/CategoryDelete", AuthVerifyMiddleware, CategoryController.CategoryDelete);
 
 
 

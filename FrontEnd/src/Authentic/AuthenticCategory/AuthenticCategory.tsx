@@ -1,3 +1,5 @@
+"use strict";
+
 import AuthenticNav from 'Authentic/Components/AuthenticNav/AuthenticNav'
 import TopBar from 'Common/Header/TopBar'
 import React, { useEffect, useState } from 'react'
@@ -22,35 +24,23 @@ import { GrUpdate } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
 
 import Card from 'react-bootstrap/Card';
-import { CategoryDetailsService } from 'ApiService/CategoryService'
-
+import { CategoryDeleteService, CategoryDetailsService } from 'ApiService/CategoryService'
+import { MouseEventHandler } from 'react';
 
 const AuthenticCategory = () => {
-
-  async function handleDelete() {
-    Swal.fire({
-      title: "Are you sure!",
-      text: "Are you sure you want to Pending it?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
-          icon: "success"
-        });
-      }
-    });
-  }
-
   const [Loading, SetLoading] = useState<boolean>(false);
 
 
-  // const [data, setData] = useState<any>("");
+
+
+
+ 
+
+
+
+
+
+
   const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
@@ -65,8 +55,6 @@ const AuthenticCategory = () => {
         const response: any = await CategoryDetailsService(PostBody);
         setData(response.CategoryInfo.data.data);
 
-        console.log(response)
-
         SetLoading(false)
 
       } catch (error) {
@@ -80,11 +68,54 @@ const AuthenticCategory = () => {
   }, []);
 
 
+// Delete Button start 
+  const handleDelete = (CategoryID: string): MouseEventHandler<HTMLDivElement> => async (event) => {
+    event.preventDefault();
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Are you sure you want to delete it?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const response: any = await CategoryDeleteService({ ID: CategoryID });
+          console.log(response);
 
-  console.log(data)
+          if (response.status === "Delete Success") {
+
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success"
+            }).then(() => {
+              window.location.reload();
+            });
+
+          } else {
+            Swal.fire({
+              title: "Error!",
+              text: "An error occurred while deleting the file.",
+              icon: "error"
+            });
+          }
 
 
-
+        } catch (error) {
+          console.error('Error deleting data:', error);
+          Swal.fire({
+            title: "Error!",
+            text: "An error occurred while deleting the file.",
+            icon: "error"
+          });
+        }
+      }
+    });
+  };
+// Delete Button end
 
   return (<>
 
@@ -148,15 +179,7 @@ const AuthenticCategory = () => {
 
                   <div className="text-muted">
                     <span>
-                      {/* {item.CategoryDetails} */}
-                      {/* <div dangerouslySetInnerHTML={{ __html: data.CategoryDetails }}></div> */}
-                      {/* <div dangerouslySetInnerHTML={{ __html: item.CategoryDetails }}></div>
-
-                    <span>
-                      {item.CategoryDetails.length > 200 ? `${item.CategoryDetails.substring(0, 200)}...` : item.CategoryDetails}
-                    </span> */}
-
-                      <div dangerouslySetInnerHTML={{ __html: item.CategoryDetails.substring(0, 5000) }}></div>
+                      <div dangerouslySetInnerHTML={{ __html: item.CategoryDetails.substring(0, 500) }}></div>
                     </span>
                   </div>
                 </NavLink>
@@ -175,7 +198,7 @@ const AuthenticCategory = () => {
                       <GrUpdate />
                     </div>
                   </NavLink>
-                  <div style={{ marginTop: "200px", width: "30px", height: "30px", display: "inline", marginRight: "5px" }} className="AuthenticActionDelete" onClick={handleDelete}>
+                  <div style={{ marginTop: "200px", width: "30px", height: "30px", display: "inline", marginRight: "5px" }} className="AuthenticActionDelete" onClick={handleDelete(item._id)}>
                     <MdDelete />
                   </div>
                 </div>
@@ -186,12 +209,6 @@ const AuthenticCategory = () => {
             <hr />
           </div>
         ))}
-
-
-
-        <hr />
-
-
 
       </div>
 

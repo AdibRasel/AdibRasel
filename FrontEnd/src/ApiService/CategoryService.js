@@ -46,7 +46,56 @@ export async function CategoryDetailsService(PostBody){
         }else{
             return {status:"Category Details List Success", CategoryInfo: Res}
         }
+       
+    }
+    catch (error) {
+       return { status: "error" , error : error }
+    }
+}
 
+
+// Category Full Details Service API Call
+export async function CategoryFullDetails(PostBody){
+    try {
+        let URL = BaseURL+"/CategoryFullDetails";
+
+        const UserToken = localStorage.getItem("Token");
+
+        const AxiosHeader = { headers: { token: UserToken } };
+
+        let Res = await axios.post(URL, PostBody, AxiosHeader)
+
+
+        if(Res.data.data.status === "Success"){
+            return {status:"Category Details Faild"}
+        }else{
+            return {status:"Category Details List Success", CategoryInfo: Res}
+        }
+       
+    }
+    catch (error) {
+       return { status: "error" , error : error }
+    }
+}
+
+
+// Category Delete Service API Call
+export async function CategoryDeleteService(PostBody){
+    try {
+        let URL = BaseURL+"/CategoryDelete";
+
+        const UserToken = localStorage.getItem("Token");
+
+        const AxiosHeader = { headers: { token: UserToken } };
+
+        let Res = await axios.post(URL, PostBody, AxiosHeader)
+
+
+        if(Res.data.data.status === "Delete Success"){
+            return {status:"Delete Faild"}
+        }else{
+            return {status:"Delete Success", CategoryInfo: Res}
+        }
        
     }
     catch (error) {

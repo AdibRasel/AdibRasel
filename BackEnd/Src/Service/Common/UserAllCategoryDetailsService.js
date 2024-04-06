@@ -15,7 +15,7 @@ const UserAllCategoryDetailsService = async (Request, DataModel) => {
         ]);
 
         if (data.length === 0) {
-            throw new Error("Category found");
+            throw new Error("Category not found");
         } else {
 
             return { status: "Success", data };
