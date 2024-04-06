@@ -46,6 +46,8 @@ Router.post("/UserAllCategoryDetails", AuthVerifyMiddleware, CategoryController.
 Router.post("/CategoryFullDetails", AuthVerifyMiddleware, CategoryController.CategoryFullDetails);
 // Category Delete
 Router.post("/CategoryDelete", AuthVerifyMiddleware, CategoryController.CategoryDelete);
+// Category Update
+Router.post("/CategoryUpdate/:id", AuthVerifyMiddleware, CategoryController.CategoryUpdate);
 
 
 

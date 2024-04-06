@@ -7,6 +7,10 @@ a {
     text-decoration: none !important;
     color: white ;
 }
+img{
+    max-width: 100%;
+    height: auto;
+}
 
 .CommonBG {
     background-color: #81689D;

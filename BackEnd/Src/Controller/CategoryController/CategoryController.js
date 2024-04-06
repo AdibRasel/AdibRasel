@@ -1,6 +1,7 @@
 const CategoryModel = require("../../Model/CategoryModel/CategoryModel");
 const IDWithDeleteService = require("../../Service/Common/IDWithDeleteService");
 const IDWithDetailsService = require("../../Service/Common/IDWithDetailsService");
+const IDWithUpdateService = require("../../Service/Common/IDWithUpdateService");
 const UserAllCategoryDetailsService = require("../../Service/Common/UserAllCategoryDetailsService");
 const CreateService = require("../../Service/CreateService/CreateService");
 
@@ -30,5 +31,11 @@ exports.CategoryFullDetails= async (req, res) => {
 //Category Delete  
 exports.CategoryDelete= async (req, res) => {
     let Result = await IDWithDeleteService(req, CategoryModel);
+    res.status(200).json(Result);
+};
+
+//Category Update  
+exports.CategoryUpdate= async (req, res) => {
+    let Result = await IDWithUpdateService(req, CategoryModel);
     res.status(200).json(Result);
 };
