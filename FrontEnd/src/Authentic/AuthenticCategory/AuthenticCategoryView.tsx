@@ -65,7 +65,7 @@ const AuthenticCategoryView = () => {
                 <div className="row">
 
                     <div className="col-md-9">
-                        <NavLink to="/AuthenticCreatePost">
+                        <NavLink to= {"/AuthenticCreatePost/" + data[0]?.CategoryTitle}>
                             <button className='btn btn-dark my-2' style={{ width: "100%" }}>Create Post</button>
                         </NavLink>
 

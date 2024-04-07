@@ -8,6 +8,7 @@ const { LoginVerifyController } = require('../Controller/LoginVerifyController/L
 const AuthVerifyMiddleware = require('../Middleware/AuthVerifyMiddleware');
 
 const CategoryController = require ("../Controller/CategoryController/CategoryController")
+const PostController = require ("../Controller/PostController/PostController")
 
 const Router =express.Router();
 
@@ -48,6 +49,19 @@ Router.post("/CategoryFullDetails", AuthVerifyMiddleware, CategoryController.Cat
 Router.post("/CategoryDelete", AuthVerifyMiddleware, CategoryController.CategoryDelete);
 // Category Update
 Router.post("/CategoryUpdate/:id", AuthVerifyMiddleware, CategoryController.CategoryUpdate);
+
+
+
+// Create Post API // পোস্ট তৈরি
+Router.post("/CreatePost", AuthVerifyMiddleware, PostController.CreatePost);
+// Post Details API // একজন ইউজারের সকল পোস্ট
+Router.post("/UserAllPostDetails", AuthVerifyMiddleware, PostController.UserAllPostDetails);
+// Post Full Details API // একটি পোস্ট সকল তথ্য
+Router.post("/PostFullDetails", AuthVerifyMiddleware, PostController.PostFullDetails);
+// Post Delete
+Router.post("/PostDelete", AuthVerifyMiddleware, PostController.PostDelete);
+// Post Update
+Router.post("/PostUpdate/:id", AuthVerifyMiddleware, PostController.PostUpdate);
 
 
 
