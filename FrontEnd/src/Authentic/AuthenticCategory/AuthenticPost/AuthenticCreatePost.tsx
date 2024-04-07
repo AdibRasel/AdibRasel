@@ -13,7 +13,7 @@ import { useParams } from 'react-router-dom';
 
 const AuthenticCreatePost = () => {
 
-    const { CategoryName } = useParams();
+    const { CategoryName, CategoryID } = useParams();
 
     console.log(CategoryName)
 
@@ -90,6 +90,8 @@ const AuthenticCreatePost = () => {
                     UserID: UserID,
                     UserMobile: UserMobile,
                     UserEmail: UserEmail,
+                    CategoryTitle: CategoryName,
+                    CategoryID: CategoryID,
                     PostTitle: PostTitle,
                     PostDetails: PostDetails,
                     PostThumbnail: Thumbnail,
@@ -110,7 +112,7 @@ const AuthenticCreatePost = () => {
                             text: "Post Create Success",
                             icon: "success"
                         });
-                        navigate('/AuthenticPost');
+                        navigate('/AuthenticCategoryView/' + CategoryID);
                         SetLoading(false)
                         const dataToSend = 'Hello from Parent';
                         // <AuthenticPost data={dataToSend}  />

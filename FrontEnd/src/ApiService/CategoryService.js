@@ -79,6 +79,32 @@ export async function CategoryFullDetails(PostBody){
 }
 
 
+// Category Full Details With AllPost// একটি ক্যটেগরির সকল তথ্য শো করবে এবং সেই ক্যটেগরির সকল পোস্ট শো করবে।
+export async function CategoryFullDetailsWithAllPost(PostBody){
+    try {
+        let URL = BaseURL+"/CategoryFullDetailsWithAllPost";
+
+        const UserToken = localStorage.getItem("Token");
+
+        const AxiosHeader = { headers: { token: UserToken } };
+
+        let Res = await axios.post(URL, PostBody, AxiosHeader)
+
+        // return {Res:Res}
+
+        if(Res.data.status === "Success"){
+            return {status:"Category And PostList Success", CategoryAndPostList: Res}
+        }else{
+            return {status:"Category Details Faild"}
+        }
+       
+    }
+    catch (error) {
+       return { status: "error" , error : error }
+    }
+}
+
+
 // Category Delete Service API Call
 export async function CategoryDeleteService(PostBody){
     try {

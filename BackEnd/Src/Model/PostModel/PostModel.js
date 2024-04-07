@@ -4,6 +4,8 @@ const DataSchema = mongoose.Schema({
     UserID:{type:mongoose.Schema.Types.ObjectId},
     UserMobile:{type:String},
     UserEmail:{type:String},
+    CategoryTitle:{type:String},
+    CategoryID:{type:mongoose.Schema.Types.ObjectId},
     PostTitle:{type:String},
     PostDetails:{type:String},
     PostThumbnail:{type:String},

@@ -45,6 +45,8 @@ Router.post("/CreateCategory", AuthVerifyMiddleware, CategoryController.CreateCa
 Router.post("/UserAllCategoryDetails", AuthVerifyMiddleware, CategoryController.UserAllCategoryDetails);
 // Category Full Details API // একটি ক্যটেগরির সকল তথ্য
 Router.post("/CategoryFullDetails", AuthVerifyMiddleware, CategoryController.CategoryFullDetails);
+// Category Full Details With All Post API // একটি ক্যটেগরির সকল তথ্য শো করবে এবং সেই ক্যটেগরির সকল পোস্ট শো করবে।
+Router.post("/CategoryFullDetailsWithAllPost", AuthVerifyMiddleware, CategoryController.CategoryFullDetailsWithAllPost);
 // Category Delete
 Router.post("/CategoryDelete", AuthVerifyMiddleware, CategoryController.CategoryDelete);
 // Category Update
