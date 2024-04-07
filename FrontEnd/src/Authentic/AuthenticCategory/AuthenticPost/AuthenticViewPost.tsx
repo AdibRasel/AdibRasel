@@ -1,8 +1,47 @@
+import { PostFullDetails } from 'ApiService/PostService';
 import AuthenticLayout from 'Authentic/AuthenticLayout/AuthenticLayout'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+
+
 
 const AuthenticViewPost = () => {
+
+    const [Loading, SetLoading] = useState<boolean>(false);
+    const [PostInfo, SetPostInfo] = useState<any[]>([]);
+
+    const { PostID } = useParams();
+
+
+    useEffect(() => {
+        SetLoading(true)
+        const PostBody = {
+            ID: PostID
+        };
+
+        const fetchData = async () => {
+            try {
+                const response: any = await PostFullDetails(PostBody);
+                SetPostInfo(response.res.data.data);
+
+                console.log(response)
+
+                SetLoading(false)
+
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+            SetLoading(false)
+            // SetLoading(true)
+        };
+        fetchData();
+
+    }, []);
+
+    console.log(PostInfo)
+
+
     return (<>
         <AuthenticLayout>
 
@@ -16,13 +55,13 @@ const AuthenticViewPost = () => {
 
                 {" > "}
 
-                <NavLink to="/Category">
-                    <span className='text-muted' >Category</span>
+                <NavLink to={"/AuthenticCategoryView/" +  PostInfo[0]?.CategoryID}>
+                    <span className='text-muted' >{PostInfo[0]?.CategoryTitle}</span>
                 </NavLink>
 
                 {" > "}
 
-                <span>Post</span>
+                <span>{PostInfo[0]?.PostTitle}</span>
 
             </div>
             {/* ========= Breadcrumb end ========== */}
@@ -31,7 +70,9 @@ const AuthenticViewPost = () => {
 
 
 
-            <h5>View Post</h5>
+            <h2>{PostInfo[0]?.PostTitle}</h2>
+            <hr />
+            <p dangerouslySetInnerHTML={{ __html: PostInfo[0]?.PostDetails }}></p>
 
 
 

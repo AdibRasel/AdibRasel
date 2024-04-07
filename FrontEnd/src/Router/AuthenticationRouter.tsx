@@ -47,7 +47,7 @@ const AuthenticationRouter = () => {
 
                 <Route path="/AuthenticCreatePost/:CategoryName/:CategoryID" element={<AuthenticCreatePost />} />
                 <Route path="/AuthenticUpdatePost/:PostID/:CategoryTitle" element={<AuthenticUpdatePost />} />
-                <Route path="/AuthenticViewPost" element={<AuthenticViewPost />} />
+                <Route path="/AuthenticViewPost/:PostID" element={<AuthenticViewPost />} />
 
 
 
