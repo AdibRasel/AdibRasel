@@ -102,3 +102,30 @@ export async function CategoryDeleteService(PostBody){
        return { status: "error" , error : error }
     }
 }
+
+
+
+// Category Update Service API Call
+export async function CategoryUpdateService(PostBody, CategoryID){
+    try {
+        let URL = BaseURL+"/CategoryUpdate/" + CategoryID;
+
+        const UserToken = localStorage.getItem("Token");
+
+        const AxiosHeader = { headers: { token: UserToken } };
+
+        let Res = await axios.post(URL, PostBody, AxiosHeader)
+
+
+        if(Res.data.data.status === "Update Success"){
+            return {status:"Update Faild"}
+        }else{
+            return {status:"Update Success", CategoryInfo: Res}
+        }
+       
+    }
+    catch (error) {
+       return { status: "error" , error : error }
+    }
+    
+}

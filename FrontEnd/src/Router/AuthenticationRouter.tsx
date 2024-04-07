@@ -42,7 +42,7 @@ const AuthenticationRouter = () => {
                 <Route path="/AuthenticUserProfile" element={<AuthenticUserProfile />} />
                 <Route path="/AuthenticCategoryNew" element={<AuthenticCategoryNew />} />
                 <Route path="/AuthenticCategoryView/:id" element={<AuthenticCategoryView />} />
-                <Route path="/AuthenticCategoryUpdate" element={<AuthenticCategoryUpdate />} />
+                <Route path="/AuthenticCategoryUpdate/:id" element={<AuthenticCategoryUpdate />} />
                 <Route path="/ActivePending" element={<ActivePending />} />
 
                 <Route path="/AuthenticCreatePost" element={<AuthenticCreatePost />} />

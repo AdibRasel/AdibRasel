@@ -193,7 +193,7 @@ const AuthenticCategory = () => {
                       <FaEye />
                     </div>
                   </NavLink>
-                  <NavLink to="/AuthenticCategoryUpdate">
+                  <NavLink to={"/AuthenticCategoryUpdate/" + item._id}>
                     <div style={{ marginTop: "200px", width: "30px", height: "30px", display: "inline", marginRight: "5px" }} className="AuthenticAction">
                       <GrUpdate />
                     </div>
