@@ -174,12 +174,12 @@ const AuthenticCategoryView = () => {
 
                                                 <div className="justify-content-between mt-3">
 
-                                                    <NavLink to="/AuthenticViewPost">
+                                                    <NavLink to={"/AuthenticViewPost/" + item._id}>
                                                         <div style={{ width: "30px", height: "30px", display: "inline" }} className="AuthenticAction mx-1">
                                                             <FaEye />
                                                         </div>
                                                     </NavLink>
-                                                    <NavLink to="/AuthenticUpdatePost">
+                                                    <NavLink to={"/AuthenticUpdatePost/" + item._id + "/" + CategoryInfo[0]?.CategoryTitle}>
                                                         <div style={{ width: "30px", height: "30px", display: "inline" }} className="AuthenticAction mx-1">
                                                             <GrUpdate />
                                                         </div>
