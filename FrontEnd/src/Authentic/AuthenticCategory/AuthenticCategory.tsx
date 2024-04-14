@@ -92,7 +92,9 @@ const AuthenticCategory = () => {
               text: "Your file has been deleted.",
               icon: "success"
             }).then(() => {
-              window.location.reload();
+              // window.location.reload();
+              setData(prevAllRemark => prevAllRemark.filter(item => item._id !== CategoryID));
+
             });
 
           } else {

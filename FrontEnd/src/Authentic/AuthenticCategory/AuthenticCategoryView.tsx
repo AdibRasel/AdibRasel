@@ -58,7 +58,6 @@ const AuthenticCategoryView = () => {
 
     }, []);
 
-
   // Delete Button start 
   const handleDelete = (PostID: any): MouseEventHandler<HTMLDivElement> => async (event) => {
     event.preventDefault();
@@ -83,7 +82,10 @@ const AuthenticCategoryView = () => {
               text: "Your file has been deleted.",
               icon: "success"
             }).then(() => {
-              window.location.reload();
+            //   window.location.reload();
+            SetPostList(prevAllRemark => prevAllRemark.filter(item => item._id !== PostID));
+
+
             });
 
           } else {

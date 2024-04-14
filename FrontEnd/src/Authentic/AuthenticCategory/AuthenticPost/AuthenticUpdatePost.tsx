@@ -62,7 +62,6 @@ const AuthenticUpdatePost = () => {
 
     const { PostID, CategoryTitle } = useParams();
 
-    const [OldData, setOldData] = useState<any[]>([]);
 
     const [OldTitle, SetOldTitle] = useState("");
     const [OldThumbnail, SetOldThumbnail] = useState("");
@@ -78,15 +77,14 @@ const AuthenticUpdatePost = () => {
         const fetchData = async () => {
             try {
                 const response: any = await PostFullDetails(PostBody);
-                setOldData(response.PostInfo.data.data);
 
                 console.log(response)
 
-                SetPostDetails(response.PostInfo.data.data[0].PostDetails)
-                SetOldTitle(response.PostInfo.data.data[0].PostTitle)
-                SetOldThumbnail(response.PostInfo.data.data[0].PostThumbnail)
-                SetCategoryID(response.PostInfo.data.data[0].CategoryID)
-                SetPostIDs(response.PostInfo.data.data[0]._id)
+                SetPostDetails(response.res.data.data[0].PostDetails)
+                SetOldTitle(response.res.data.data[0].PostTitle)
+                SetOldThumbnail(response.res.data.data[0].PostThumbnail)
+                SetCategoryID(response.res.data.data[0].CategoryID)
+                SetPostIDs(response.res.data.data[0]._id)
 
                 SetLoading(false)
 
@@ -117,7 +115,7 @@ const AuthenticUpdatePost = () => {
                 const postBody = {
                     PostTitle: PostTitle,
                     PostDetails: PostDetails,
-                    PostThumbnail: Thumbnail,
+                    PostThumbnail: Thumbnail || OldThumbnail,
                     CategoryTitle: CategoryTitle,
                     Status: "Active"
                 };
@@ -126,14 +124,14 @@ const AuthenticUpdatePost = () => {
 
                 SetLoading(true)
                 try {
-                    const registrationAPICall = await PostUpdateService(postBody, PostIDs);
+                    const UpdateItem = await PostUpdateService(postBody, PostIDs);
 
-                    const RegistrationSucess = registrationAPICall?.status;
+                    // const UpdateItemSuccess = UpdateItem?.status;
 
-                    if (RegistrationSucess === "Update Success") {
+                    if (UpdateItem?.status === "Update Success") {
                         Swal.fire({
                             title: "Good job",
-                            text: "Post Create Success",
+                            text: "Post Update Success",
                             icon: "success"
                         });
                         navigate('/AuthenticCategoryView/' + Category);

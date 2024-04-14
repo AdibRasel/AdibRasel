@@ -115,7 +115,7 @@ const AuthenticCategoryUpdate = () => {
                 const postBody = {
                     CategoryTitle: CategoryTitle,
                     CategoryDetails: CategoryDetails,
-                    CategoryThumbnail: Thumbnail,
+                    CategoryThumbnail: Thumbnail || OldThumbnail,
                     Status: "Active"
                 };
 
