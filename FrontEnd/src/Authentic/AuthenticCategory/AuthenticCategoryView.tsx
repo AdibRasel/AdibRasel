@@ -58,57 +58,57 @@ const AuthenticCategoryView = () => {
 
     }, []);
 
-  // Delete Button start 
-  const handleDelete = (PostID: any): MouseEventHandler<HTMLDivElement> => async (event) => {
-    event.preventDefault();
-    Swal.fire({
-      title: "Are you sure?",
-      text: "Are you sure you want to delete it?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        try {
-          const response: any = await PostDeleteService({ ID: PostID });
-          console.log(response);
+    // Delete Button start 
+    const handleDelete = (PostID: any): MouseEventHandler<HTMLDivElement> => async (event) => {
+        event.preventDefault();
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Are you sure you want to delete it?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    const response: any = await PostDeleteService({ ID: PostID });
+                    console.log(response);
 
-          if (response.status === "Delete Success") {
+                    if (response.status === "Delete Success") {
 
-            Swal.fire({
-              title: "Deleted!",
-              text: "Your file has been deleted.",
-              icon: "success"
-            }).then(() => {
-            //   window.location.reload();
-            SetPostList(prevAllRemark => prevAllRemark.filter(item => item._id !== PostID));
-
-
-            });
-
-          } else {
-            Swal.fire({
-              title: "Error!",
-              text: "An error occurred while deleting the file.",
-              icon: "error"
-            });
-          }
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        }).then(() => {
+                            //   window.location.reload();
+                            SetPostList(prevAllRemark => prevAllRemark.filter(item => item._id !== PostID));
 
 
-        } catch (error) {
-          console.error('Error deleting data:', error);
-          Swal.fire({
-            title: "Error!",
-            text: "An error occurred while deleting the file.",
-            icon: "error"
-          });
-        }
-      }
-    });
-  };
-// Delete Button end
+                        });
+
+                    } else {
+                        Swal.fire({
+                            title: "Error!",
+                            text: "An error occurred while deleting the file.",
+                            icon: "error"
+                        });
+                    }
+
+
+                } catch (error) {
+                    console.error('Error deleting data:', error);
+                    Swal.fire({
+                        title: "Error!",
+                        text: "An error occurred while deleting the file.",
+                        icon: "error"
+                    });
+                }
+            }
+        });
+    };
+    // Delete Button end
 
 
     return (<>
@@ -138,85 +138,96 @@ const AuthenticCategoryView = () => {
 
 
 
-
-                        <div className="mb-3 container" style={{ width: "100%" }}>
-
-
-
-
-                            {
-                                PostList.map((item: any, index: any) => (
-
-                                    <div className="AllPostList" key={index}>
+                        {Loading ? (
+                            <div className="spinner-border text-black text-center" style={{ textAlign: "center", margin: "auto" }} role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </div>
+                        ) : (
+                            <div className="mb-3 container" style={{ width: "100%" }}>
 
 
-                                        <div className="row">
-
-                                            <div className="col-md-8">
-
-                                                {/* <h2 className='CommonColor fs-4'>This is Javascript pro </h2> */}
-                                                <h2 className='CommonColor fs-4'>{item.PostTitle}</h2>
-
-                                                <div className="d-flex justify-content-start">
-                                                    <div className="text-muted">
-                                                        <FaEdit /> <span>{item.UserName}</span>
-                                                    </div>
-                                                    <div className="text-muted">
-
-                                                        - <MdOutlineDateRange /> <span>{item.CreateDate}</span>
-                                                    </div>
-                                                </div>
-
-                                                <div className="text-muted">
-                                                    <span>
-                                                        <div dangerouslySetInnerHTML={{ __html: item.PostDetails.substring(0, 500) }}></div>
-                                                    </span>
-                                                </div>
 
 
-                                                <div className="justify-content-between mt-3">
+                                {
+                                    PostList.map((item: any, index: any) => (
 
+                                        <div className="AllPostList" key={index}>
+
+
+
+
+                                            <div className="row">
+
+                                                <div className="col-md-8">
+
+                                                    {/* <h2 className='CommonColor fs-4'>This is Javascript pro </h2> */}
                                                     <NavLink to={"/AuthenticViewPost/" + item._id}>
-                                                        <div style={{ width: "30px", height: "30px", display: "inline" }} className="AuthenticAction mx-1">
-                                                            <FaEye />
-                                                        </div>
+                                                        <h2 className='CommonColor fs-4'>{item.PostTitle}</h2>
                                                     </NavLink>
-                                                    <NavLink to={"/AuthenticUpdatePost/" + item._id + "/" + CategoryInfo[0]?.CategoryTitle}>
-                                                        <div style={{ width: "30px", height: "30px", display: "inline" }} className="AuthenticAction mx-1">
-                                                            <GrUpdate />
+
+
+                                                    <div className="d-flex justify-content-start">
+                                                        <div className="text-muted">
+                                                            <FaEdit /> <span>{item.UserName}</span>
                                                         </div>
-                                                    </NavLink>
-                                                    <div style={{ width: "30px", height: "30px", display: "inline" }} className="AuthenticActionDelete mx-1" onClick={handleDelete(item._id)}>
-                                                        <MdDelete />
+                                                        <div className="text-muted">
+
+                                                            - <MdOutlineDateRange /> <span>{item.CreateDate}</span>
+                                                        </div>
                                                     </div>
+
+                                                    <div className="text-muted">
+                                                        <NavLink to={"/AuthenticViewPost/" + item._id}>
+                                                            <div dangerouslySetInnerHTML={{ __html: item.PostDetails.substring(0, 500) }}></div>
+                                                        </NavLink>
+                                                    </div>
+
+
+                                                    <div className="justify-content-between mt-3">
+
+                                                        <NavLink to={"/AuthenticViewPost/" + item._id}>
+                                                            <div style={{ width: "30px", height: "30px", display: "inline" }} className="AuthenticAction mx-1">
+                                                                <FaEye />
+                                                            </div>
+                                                        </NavLink>
+                                                        <NavLink to={"/AuthenticUpdatePost/" + item._id + "/" + CategoryInfo[0]?.CategoryTitle}>
+                                                            <div style={{ width: "30px", height: "30px", display: "inline" }} className="AuthenticAction mx-1">
+                                                                <GrUpdate />
+                                                            </div>
+                                                        </NavLink>
+                                                        <div style={{ width: "30px", height: "30px", display: "inline" }} className="AuthenticActionDelete mx-1" onClick={handleDelete(item._id)}>
+                                                            <MdDelete />
+                                                        </div>
+
+                                                    </div>
+
+
 
                                                 </div>
 
 
+                                                <div className="col-md-4">
+                                                    <NavLink to={"/AuthenticViewPost/" + item._id}>
+                                                        <img style={{ width: "100%" }} src={item.PostThumbnail} className='img-fluid' alt="" />
+                                                    </NavLink>
+
+                                                </div>
+
 
                                             </div>
 
-
-                                            <div className="col-md-4">
-                                                <img style={{ width: "100%" }} src={item.PostThumbnail} className='img-fluid' alt="" />
-                                            </div>
-
+                                            <hr />
 
                                         </div>
 
-                                        <hr />
-
-                                    </div>
 
 
+                                    ))
+                                }
 
-                                ))
-                            }
+                            </div>
 
-
-
-                        </div>
-
+                        )}
 
 
 

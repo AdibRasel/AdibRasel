@@ -65,7 +65,7 @@ export async function PostFullDetails(PostBody){
 
         let Res = await axios.post(URL, PostBody, AxiosHeader)
 
-        return {res:Res}
+        // return {res:Res}
         
         if(Res.data.data.status === "Success"){
             return {status:"Post Details Faild"}

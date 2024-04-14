@@ -23,7 +23,7 @@ const AuthenticViewPost = () => {
         const fetchData = async () => {
             try {
                 const response: any = await PostFullDetails(PostBody);
-                SetPostInfo(response.res.data.data);
+                SetPostInfo(response.PostInfo.data.data);
 
                 console.log(response)
 
@@ -54,12 +54,23 @@ const AuthenticViewPost = () => {
                 </NavLink>
 
                 {" > "}
+                {Loading === true && (
+                    <div className="spinner-border text-black text-center" style={{ textAlign: "center", margin: "auto" }} role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                )}
 
-                <NavLink to={"/AuthenticCategoryView/" +  PostInfo[0]?.CategoryID}>
+                <NavLink to={"/AuthenticCategoryView/" + PostInfo[0]?.CategoryID}>
                     <span className='text-muted' >{PostInfo[0]?.CategoryTitle}</span>
                 </NavLink>
 
                 {" > "}
+
+                {Loading === true && (
+                    <div className="spinner-border text-black text-center" style={{ textAlign: "center", margin: "auto" }} role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                )}
 
                 <span>{PostInfo[0]?.PostTitle}</span>
 
@@ -69,11 +80,22 @@ const AuthenticViewPost = () => {
 
 
 
+            {Loading ? (
+                <div className="spinner-border text-black text-center" style={{ textAlign: "center", margin: "auto" }} role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            ) : (
 
-            <h2>{PostInfo[0]?.PostTitle}</h2>
-            <hr />
-            <p dangerouslySetInnerHTML={{ __html: PostInfo[0]?.PostDetails }}></p>
+                <div className="">
+                    
+                    <h2>{PostInfo[0]?.PostTitle}
+                        <img src={PostInfo[0]?.PostThumbnail} style={{ width: "60px", borderRadius: "3px" }} alt="" />
+                    </h2>
+                    <hr />
+                    <p dangerouslySetInnerHTML={{ __html: PostInfo[0]?.PostDetails }}></p>
 
+                </div>
+            )}
 
 
 
