@@ -1,4 +1,5 @@
 import AuthenticNav from 'Authentic/Components/AuthenticNav/AuthenticNav'
+import BackToTopButton from 'Common/BackToTopButton/BackToTopButton'
 import Footer from 'Common/Footer/Footer'
 import AuthenticTopBar from 'Common/Header/AuthenticTopBar'
 import TopBar from 'Common/Header/TopBar'
@@ -20,7 +21,7 @@ const AuthenticLayout = (props: any) => {
         </div>
 
 
-
+        <BackToTopButton />
         <Footer />
 
     </>)
