@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../../../Common/Header/Header'
 import TopBar from '../../../Common/Header/TopBar'
-import Topic from 'Public/Components/Topic/Topic'
+// import Topic from 'Public/Components/Topic/Topic'
 import PublicNavBar from 'Common/NavBar/PublicNavBar'
 import BackToTopButton from '../../../Common/BackToTopButton/BackToTopButton'
 import Footer from '../../../Common/Footer/Footer'
@@ -83,7 +83,7 @@ const Category = () => {
 
 
 
-          <Topic />
+          {/* <Topic /> */}
 
 
 

@@ -8,7 +8,8 @@ const { LoginVerifyController } = require('../Controller/LoginVerifyController/L
 const AuthVerifyMiddleware = require('../Middleware/AuthVerifyMiddleware');
 
 const CategoryController = require ("../Controller/CategoryController/CategoryController")
-const PostController = require ("../Controller/PostController/PostController")
+const PostController = require ("../Controller/PostController/PostController");
+const ALLinfoController = require('../Controller/ALLinfoController/ALLinfoController');
 
 const Router =express.Router();
 
@@ -64,6 +65,17 @@ Router.post("/PostFullDetails", AuthVerifyMiddleware, PostController.PostFullDet
 Router.post("/PostDelete", AuthVerifyMiddleware, PostController.PostDelete);
 // Post Update
 Router.post("/PostUpdate/:id", AuthVerifyMiddleware, PostController.PostUpdate);
+
+
+
+
+
+
+
+
+
+// Public Router start 
+Router.get("/Allinfo", ALLinfoController.Allinfo);
 
 
 

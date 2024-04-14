@@ -64,7 +64,7 @@ const Social = () => {
     </div>
 
     <div className="mb-2">
-      <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.google.com/search?q=Rasel+Hossain+Adib" target="_blank" rel="noopener noreferrer">
         <div className="d-flex justify-content-between border CommonColor SocialItem rounded" style={{ alignItems: 'center' }}>
           <div className="icon">
             <ImGoogle2 style={{ width: "40px", height: "40px" }} />
