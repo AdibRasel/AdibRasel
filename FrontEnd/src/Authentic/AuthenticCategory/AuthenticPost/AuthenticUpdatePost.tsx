@@ -80,11 +80,11 @@ const AuthenticUpdatePost = () => {
 
                 console.log(response)
 
-                SetPostDetails(response.res.data.data[0].PostDetails)
-                SetOldTitle(response.res.data.data[0].PostTitle)
-                SetOldThumbnail(response.res.data.data[0].PostThumbnail)
-                SetCategoryID(response.res.data.data[0].CategoryID)
-                SetPostIDs(response.res.data.data[0]._id)
+                SetPostDetails(response.PostInfo.data.data[0].PostDetails)
+                SetOldTitle(response.PostInfo.data.data[0].PostTitle)
+                SetOldThumbnail(response.PostInfo.data.data[0].PostThumbnail)
+                SetCategoryID(response.PostInfo.data.data[0].CategoryID)
+                SetPostIDs(response.PostInfo.data.data[0]._id)
 
                 SetLoading(false)
 
